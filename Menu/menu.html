@@ -3,30 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Finkelstein | Menu principal</title>
+  <title>Thomas Finkelstein</title>
   <link rel="stylesheet" href="menu.css">
 </head>
 <body>
-  <div class="landing">
+  <!-- Animated Background -->
+  <div class="grid-background"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="particles"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="monogram">TF</div>
     <h1 class="title">Thomas Finkelstein</h1>
     <p class="subtitle">Choisissez votre univers</p>
-
+    
     <div class="buttons">
-      <button class="btn pro" onclick="openUniverse('pro')">Professionnel</button>
-      <button class="btn perso" onclick="openUniverse('perso')">Personnel</button>
+      <button class="btn pro" onclick="navigate('pro')">Professionnel</button>
+      <button class="btn perso" onclick="navigate('perso')">Personnel</button>
     </div>
   </div>
 
-  <div id="transition" class="transition"></div>
+  <!-- Footer -->
+  <div class="signature">TF © 2025</div>
+
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transition"></div>
 
   <script>
-    function openUniverse(choice) {
+    function navigate(choice) {
       const transition = document.getElementById('transition');
       transition.classList.add('active');
+      
       setTimeout(() => {
-        if (choice === 'pro') window.location.href = '../pro/index.html';
-        else window.location.href = '../perso/index.html';
-      }, 800); // Durée de la transition avant redirection
+        if (choice === 'pro') {
+          window.location.href = '../pro/index.html';
+        } else {
+          window.location.href = '../perso/index.html';
+        }
+      }, 500);
+    }
+
+    // Prevent transition flash on load
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        document.getElementById('transition').classList.remove('active');
+      }
+    });
+
+    // Create animated particles
+    const particlesContainer = document.querySelector('.particles');
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 15 + 's';
+      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+      particlesContainer.appendChild(particle);
     }
   </script>
 </body>
