@@ -4,80 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ESAIP | Thomas Finkelstein</title>
+  <link rel="stylesheet" href="../pro.css">
   <link rel="stylesheet" href="esaip.css">
-
 </head>
 <body>
-  <!-- === HEADER === -->
-  <header>
-    <nav>
-      <div class="logo">ESAIP</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="competences.html">Compétences</a></li>
-        <li><a href="../Menu/menu.html" class="retour">Retour au menu</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <div class="logo">ESAIP</div>
+    <ul class="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../projets/projets.html">Projets</a></li>
+      <li><a href="../competences/competences.html">Compétences</a></li>
+      <li><a href="../../Menu/menu.html" class="retour">Menu</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- === MAIN CONTENT === -->
-  <main class="esaip-main">
+<main>
+  <section class="hero-esaip">
+    <h1>Parcours à l’ESAIP</h1>
+    <p>De la 3ᵉ à la 5ᵉ année — projets, réseaux, cybersécurité, cloud, développement.</p>
+    <div class="year-buttons">
+      <button class="year-btn y3" onclick="goto('3A')">3ᵉ année</button>
+      <button class="year-btn y4" onclick="goto('4A')">4ᵉ année</button>
+      <button class="year-btn y5" onclick="goto('5A')">5ᵉ année</button>
+    </div>
+  </section>
+</main>
 
-    <section class="hero-esaip">
-      <h1>Mon parcours à l’ESAIP</h1>
-      <p>
-        Étudiant en <strong>Informatique et Réseaux</strong> à l’ESAIP, j’ai développé une approche technique et humaine de l’ingénierie numérique.
-        Cette page présente mon évolution à travers les trois années du cursus ingénieur.
-      </p>
+<footer><p>© 2025 Thomas Finkelstein — ESAIP</p></footer>
 
-      <div class="year-buttons">
-        <button class="year-btn y3" onclick="navigate('3A')">3ᵉ année</button>
-        <button class="year-btn y4" onclick="navigate('4A')">4ᵉ année</button>
-        <button class="year-btn y5" onclick="navigate('5A')">5ᵉ année</button>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>🎓 Un parcours tourné vers l’innovation</h2>
-      <p>
-        Le cycle ingénieur à l’ESAIP m’a permis d’acquérir une base solide en réseaux, cybersécurité, cloud computing et développement.
-        L’approche par projets m’a aidé à progresser sur la gestion d’équipe, l’autonomie et la recherche de solutions concrètes.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>🌍 Une ouverture internationale</h2>
-      <p>
-        Mon semestre Erasmus à la <strong>Riga Technical University (RTU)</strong> a été une expérience marquante : j’y ai collaboré sur des projets
-        multiculturels et découvert une nouvelle manière d’aborder l’ingénierie logicielle. Cette expérience a renforcé mon adaptabilité et ma curiosité.
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>💡 Compétences développées</h2>
-      <ul class="skills">
-        <li>Administration et sécurisation de réseaux (Windows Server, Cisco, Linux)</li>
-        <li>Développement web (HTML, CSS, PowerShell, Python)</li>
-        <li>Virtualisation, Cloud et gestion de serveurs</li>
-        <li>Communication et collaboration internationale</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- === FOOTER === -->
-  <footer>
-    <p>© 2025 Thomas Finkelstein — ESAIP</p>
-  </footer>
-
-  <!-- === SCRIPT === -->
-  <script>
-    function navigate(year) {
-      if (year === '3A') window.location.href = '3A.html';
-      else if (year === '4A') window.location.href = '4A.html';
-      else if (year === '5A') window.location.href = '5A.html';
-    }
-  </script>
+<script>
+  function goto(y){ window.location.href = y + '.html'; }
+</script>
 </body>
 </html>

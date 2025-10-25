@@ -7,62 +7,46 @@
   <link rel="stylesheet" href="menu.css">
 </head>
 <body>
-  <!-- Animated Background -->
   <div class="grid-background"></div>
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
   <div class="orb orb-3"></div>
   <div class="particles"></div>
 
-  <!-- Main Content -->
   <div class="container">
     <div class="monogram">TF</div>
     <h1 class="title">Thomas Finkelstein</h1>
     <p class="subtitle">Choisissez votre univers</p>
-    
     <div class="buttons">
-      <button class="btn pro" onclick="navigate('pro')">Professionnel</button>
+      <button class="btn pro"  onclick="navigate('pro')">Professionnel</button>
       <button class="btn perso" onclick="navigate('perso')">Personnel</button>
     </div>
   </div>
 
-  <!-- Footer -->
   <div class="signature">TF © 2025</div>
-
-  <!-- Transition Overlay -->
   <div class="transition-overlay" id="transition"></div>
 
   <script>
     function navigate(choice) {
-      const transition = document.getElementById('transition');
-      transition.classList.add('active');
-      
+      const t = document.getElementById('transition');
+      t.classList.add('active');
       setTimeout(() => {
-        if (choice === 'pro') {
-          window.location.href = '../pro/index.html';
-        } else {
-          window.location.href = '../perso/index.html';
-        }
+        if (choice === 'pro')   window.location.href = '../pro/index.html';
+        else                     window.location.href = '../perso/index.html';
       }, 500);
     }
-
-    // Prevent transition flash on load
-    window.addEventListener('pageshow', (event) => {
-      if (event.persisted) {
-        document.getElementById('transition').classList.remove('active');
-      }
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) document.getElementById('transition').classList.remove('active');
     });
-
-    // Create animated particles
-    const particlesContainer = document.querySelector('.particles');
+    const particles = document.querySelector('.particles');
     for (let i = 0; i < 50; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.top = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 15 + 's';
-      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-      particlesContainer.appendChild(particle);
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top  = Math.random() * 100 + '%';
+      p.style.animationDelay = Math.random() * 15 + 's';
+      p.style.animationDuration = (15 + Math.random()*10) + 's';
+      particles.appendChild(p);
     }
   </script>
 </body>

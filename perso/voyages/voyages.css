@@ -1,0 +1,16 @@
+/* ====== PERSO > VOYAGES ====== */
+@import url("../perso.css");
+
+.hero h1{ text-shadow:0 0 16px rgba(255,255,255,.45) }
+
+/* Timeline voyages */
+.timeline{padding:56px 10%}
+.step{
+  position:relative;padding:16px 18px 16px 38px;margin:14px 0;
+  background:rgba(0,0,0,.26);border:1px solid rgba(255,255,255,.22);border-radius:14px;
+}
+.step::before{
+  content:"";position:absolute;left:16px;top:22px;width:8px;height:8px;border-radius:999px;background:#fff;box-shadow:0 0 12px rgba(255,255,255,.9)
+}
+.step h3{margin-bottom:6px}
+.step p{opacity:.95;line-height:1.7}

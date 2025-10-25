@@ -1,0 +1,41 @@
+/* ====== PRO > ESAIP ====== */
+@import url("../pro.css"); /* assure l’héritage si la page est ouverte seule (optionnel) */
+
+.hero-esaip{
+  text-align:center;
+  padding:100px 10% 80px;
+  background:linear-gradient(135deg,#101012,#18181a);
+  border-bottom:1px solid #222;
+  animation:fadeIn .9s ease both;
+}
+.hero-esaip h1{font-size:2.6rem;color:#0078ff;margin-bottom:14px}
+.hero-esaip p{color:#cfcfcf;max-width:900px;margin:0 auto 42px;line-height:1.7}
+
+.year-buttons{display:flex;justify-content:center;gap:34px;flex-wrap:wrap}
+.year-btn{
+  padding:18px 48px;font-size:1.05rem;color:#fff;background:transparent;
+  border:2px solid #fff;border-radius:999px;cursor:pointer;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position:relative;overflow:hidden;
+}
+.year-btn::before{
+  content:"";position:absolute;inset:0;left:-100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);
+  transition:left .45s ease;
+}
+.year-btn:hover::before{left:100%}
+.year-btn:hover{transform:scale(1.04)}
+.year-btn.y3:hover{border-color:#1e90ff;box-shadow:0 0 26px #1e90ff66}
+.year-btn.y4:hover{border-color:#00ffcc;box-shadow:0 0 26px #00ffcc66}
+.year-btn.y5:hover{border-color:#ff0080;box-shadow:0 0 26px #ff008066}
+
+/* Contenu complémentaire (si tu ajoutes des blocs) */
+.esaip-bloc{padding:60px 10%;border-top:1px solid #222}
+.esaip-bloc h2{color:#0078ff;margin-bottom:12px}
+.esaip-bloc p{color:#d0d0d0;max-width:900px;line-height:1.8}
+
+/* Responsive */
+@media (max-width: 900px){
+  .year-buttons{gap:18px}
+  .year-btn{padding:16px 36px}
+}

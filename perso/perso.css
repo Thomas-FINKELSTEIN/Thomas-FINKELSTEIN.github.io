@@ -1,107 +1,66 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+/* ====== PERSO - BASE COMMUNE (dégradé animé + nav glass) ====== */
+:root{
+  --txt:#fff;
+  --muted:#f0f0f0;
+  --glass:rgba(0,0,0,.25);
+  --border:rgba(255,255,255,.22);
 }
 
-body {
-  background: linear-gradient(135deg, #ff7b00, #ff00aa, #6600ff);
-  background-size: 300% 300%;
-  animation: gradientShift 12s ease infinite;
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  color:var(--txt);min-height:100vh;display:flex;flex-direction:column;
+  background:linear-gradient(135deg,#ff7b00,#ff00aa,#6600ff);
+  background-size:300% 300%;
+  animation:gradientShift 14s ease infinite;
+  font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Nav glassmorphism */
+header{
+  position:sticky;top:0;z-index:100;background:var(--glass);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
 }
-
-header {
-  background: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-  padding: 15px 10%;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 10%}
+.logo{font-weight:700;letter-spacing:.4px;text-shadow:0 0 8px rgba(255,255,255,.45)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{
+  color:#fff;text-decoration:none;font-weight:500;transition:transform .2s ease,text-shadow .2s ease,opacity .2s ease;opacity:.95;
 }
+.nav-links a:hover{transform:scale(1.05);text-shadow:0 0 10px rgba(255,255,255,.9);opacity:1}
+.retour{border:1px solid var(--border);padding:6px 12px;border-radius:10px}
+.retour:hover{background:#fff;color:#ff00aa}
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Hero générique */
+.hero{
+  text-align:center;padding:110px 10% 70px;animation:fadeIn .9s ease both;
 }
+.hero h1{font-size:2.4rem;margin-bottom:10px}
+.hero p{color:var(--muted);max-width:900px;margin:0 auto}
 
-.logo {
-  font-size: 1.4em;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 0 10px #ffffff90;
+/* Cartes hub */
+.cards{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;margin-top:34px}
+.card{
+  background:rgba(0,0,0,.25);backdrop-filter:blur(8px);border:1px solid var(--border);
+  border-radius:16px;padding:20px 24px;min-width:220px;transition:transform .25s ease, box-shadow .25s ease;
 }
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.45)}
+.card a{color:#fff;text-decoration:none;font-weight:700}
+.card small{display:block;margin-top:6px;opacity:.9}
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
+footer{text-align:center;padding:20px;margin-top:auto;background:rgba(0,0,0,.25);border-top:1px solid var(--border);font-size:.9rem}
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
+/* Animations */
+@keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-.nav-links a:hover {
-  text-shadow: 0 0 10px #fff;
-  transform: scale(1.05);
-}
-
-.hero {
-  text-align: center;
-  padding: 120px 10% 80px;
-  animation: fadeIn 1.5s ease;
-}
-
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  color: #f0f0f0;
-  font-size: 1.1em;
-  line-height: 1.6em;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: auto;
-  background: rgba(0, 0, 0, 0.25);
-  color: #fff;
-  font-size: 0.9em;
-}
-
-.retour {
-  border: 1px solid #fff;
-  padding: 6px 12px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.retour:hover {
-  background: white;
-  color: #ff00aa;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Responsive */
+@media (max-width: 900px){
+  nav{padding:12px 6%}
+  .hero{padding:90px 6% 56px}
 }

@@ -3,31 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon univers professionnel | Thomas Finkelstein</title>
+  <title>Professionnel | Thomas Finkelstein</title>
   <link rel="stylesheet" href="pro.css">
+  <style>
+    .cards{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:36px}
+    .card{border:1px solid #222;background:#141416;border-radius:14px;padding:24px 28px;min-width:240px;transition:.3s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.4)}
+    .card a{color:#fff;text-decoration:none;font-weight:600}
+    .card small{color:#aaa;display:block;margin-top:6px}
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Professionnel</div>
-      <ul class="nav-links">
-        <li><a href="esaip.html">ESAIP</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="competences.html">Compétences</a></li>
-        <li><a href="../Menu/menu.html" class="retour">Retour au menu</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <div class="logo">Professionnel</div>
+    <ul class="nav-links">
+      <li><a href="esaip/esaip.html">ESAIP</a></li>
+      <li><a href="projets/projets.html">Projets</a></li>
+      <li><a href="competences/competences.html">Compétences</a></li>
+      <li><a href="../Menu/menu.html" class="retour">Menu</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <h1>Mon Univers Professionnel</h1>
-      <p>Découvrez mon parcours à l’ESAIP, mes projets techniques et mes compétences en informatique et réseaux.</p>
-    </section>
-  </main>
+<main>
+  <section class="hero">
+    <h1>Mon univers professionnel</h1>
+    <p>Parcours ESAIP, projets techniques et compétences en Informatique & Réseaux.</p>
+    <div class="cards">
+      <div class="card"><a href="esaip/esaip.html">ESAIP</a><small>3A · 4A · 5A</small></div>
+      <div class="card"><a href="projets/projets.html">Projets</a><small>Académiques & perso</small></div>
+      <div class="card"><a href="competences/competences.html">Compétences</a><small>Techniques & soft skills</small></div>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    <p>© 2025 Thomas Finkelstein — Portfolio professionnel</p>
-  </footer>
+<footer><p>© 2025 Thomas Finkelstein — Pro</p></footer>
 </body>
 </html>

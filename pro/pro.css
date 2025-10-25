@@ -1,98 +1,79 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+/* ====== PRO - BASE COMMUNE (header/nav/footer/typo/utilitaires) ====== */
+:root{
+  --bg:#0f0f10;
+  --panel:#141416;
+  --panel-2:#1c1c1e;
+  --txt:#ffffff;
+  --muted:#b8b8b8;
+  --accent:#0078ff;
+  --line:#222;
+  --shadow:0 12px 28px rgba(0,0,0,.35);
 }
 
-body {
-  background: #0f0f10;
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-header {
-  background: #1c1c1e;
-  padding: 15px 10%;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+/* Header / Navbar */
+header{
+  background:var(--panel-2);
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 10px rgba(0,0,0,.45);
 }
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 10%}
+.logo{font-weight:700;letter-spacing:.4px;color:var(--accent);font-size:1.2rem}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{
+  color:var(--txt);text-decoration:none;font-weight:500;opacity:.95;
+  transition:color .25s ease, opacity .25s ease;
 }
-
-.logo {
-  font-size: 1.4em;
-  font-weight: bold;
-  color: #0078ff;
+.nav-links a:hover{color:var(--accent);opacity:1}
+.retour{
+  border:1px solid var(--accent);padding:6px 12px;border-radius:8px;
+  transition:background .25s ease,color .25s ease, transform .25s ease;
 }
+.retour:hover{background:var(--accent);color:#000;transform:translateY(-1px)}
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+/* Hero générique */
+.hero{
+  text-align:center;padding:110px 10% 70px;animation:fadeIn .9s ease both;
 }
+.hero h1{font-size:2.4rem;color:var(--accent);margin-bottom:12px}
+.hero p{color:var(--muted);max-width:900px;margin:0 auto;line-height:1.7}
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-weight: 500;
+/* Sections génériques */
+.section{padding:64px 10%;border-top:1px solid var(--line);animation:fadeIn .7s ease both}
+.section.alt{background:var(--panel)}
+.section h2{color:var(--accent);margin-bottom:14px;font-size:1.35rem}
+.section p{color:#d0d0d0;max-width:900px;line-height:1.8}
+
+/* Utilitaires */
+.container{max-width:1100px;margin:0 auto}
+.grid{display:grid;gap:20px}
+.grid.cols-2{grid-template-columns:repeat(2, minmax(0,1fr))}
+.grid.cols-3{grid-template-columns:repeat(3, minmax(0,1fr))}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:22px;box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease;
 }
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:#eaeaea;font-size:.85rem}
 
-.nav-links a:hover {
-  color: #0078ff;
-}
+/* Footer */
+footer{text-align:center;padding:20px;margin-top:auto;background:var(--panel-2);color:#9a9a9a;font-size:.9rem}
 
-.hero {
-  text-align: center;
-  padding: 120px 10% 80px;
-  animation: fadeIn 1.5s ease;
-}
+/* Animations */
+@keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  color: #0078ff;
-}
-
-.hero p {
-  color: #ccc;
-  font-size: 1.1em;
-  line-height: 1.6em;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: auto;
-  background: #1c1c1e;
-  color: #888;
-  font-size: 0.9em;
-}
-
-.retour {
-  border: 1px solid #0078ff;
-  padding: 6px 12px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.retour:hover {
-  background: #0078ff;
-  color: black;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Responsive */
+@media (max-width: 900px){
+  .grid.cols-2,.grid.cols-3{grid-template-columns:1fr}
+  .hero{padding:90px 6% 56px}
+  nav{padding:12px 6%}
 }

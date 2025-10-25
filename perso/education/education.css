@@ -1,0 +1,27 @@
+/* ====== PERSO > ÉDUCATION ====== */
+@import url("../perso.css");
+
+.hero h1{ text-shadow:0 0 16px rgba(255,255,255,.45) }
+
+/* Tableau parcours / modules */
+.educ{padding:56px 10%}
+.table{
+  width:100%;border-collapse:separate;border-spacing:0 10px;
+}
+.row{
+  background:rgba(0,0,0,.25);backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.22);border-radius:12px;
+  display:grid;grid-template-columns:140px 1fr 200px;gap:14px;
+  padding:14px 16px;color:#fff;
+}
+.row:not(:last-child){margin-bottom:10px}
+.row .year{font-weight:700}
+.row .desc{opacity:.95;line-height:1.6}
+.row .skills{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.row .skills .badge{border:1px solid rgba(255,255,255,.3);padding:6px 10px;border-radius:999px}
+
+/* Responsive */
+@media (max-width: 900px){
+  .row{grid-template-columns:1fr}
+  .row .skills{justify-content:flex-start}
+}
