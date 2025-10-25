@@ -1,43 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Professionnel | Thomas Finkelstein</title>
-  <link rel="stylesheet" href="pro.css">
-  <style>
-    .cards{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:36px}
-    .card{border:1px solid #222;background:#141416;border-radius:14px;padding:24px 28px;min-width:240px;transition:.3s}
-    .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.4)}
-    .card a{color:#fff;text-decoration:none;font-weight:600}
-    .card small{color:#aaa;display:block;margin-top:6px}
-  </style>
+  <link rel="stylesheet" href="pro.css" />
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo">Professionnel</div>
-    <ul class="nav-links">
-      <li><a href="esaip/esaip.html">ESAIP</a></li>
-      <li><a href="projets/projets.html">Projets</a></li>
-      <li><a href="competences/competences.html">Compétences</a></li>
-      <li><a href="../Menu/menu.html" class="retour">Menu</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Animated Background -->
+  <div class="grid-background"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="particles"></div>
 
-<main>
-  <section class="hero">
-    <h1>Mon univers professionnel</h1>
-    <p>Parcours ESAIP, projets techniques et compétences en Informatique & Réseaux.</p>
-    <div class="cards">
-      <div class="card"><a href="esaip/esaip.html">ESAIP</a><small>3A · 4A · 5A</small></div>
-      <div class="card"><a href="projets/projets.html">Projets</a><small>Académiques & perso</small></div>
-      <div class="card"><a href="competences/competences.html">Compétences</a><small>Techniques & soft skills</small></div>
+  <!-- Brand -->
+  <div class="brand">Thomas FINKELSTEIN</div>
+
+  <!-- Main Content -->
+  <main class="home">
+    <div class="content-wrapper">
+      <h1 class="main-title">Intelligence Artificielle & Data</h1>
+      <p class="intro">
+        Étudiant en 4ᵉ année à l'ESAIP, je me spécialise dans l'intelligence artificielle et les données.<br>
+        Pour en découvrir plus sur mon univers professionnel, choisissez votre section.
+      </p>
+
+      <div class="cta-group">
+        <a class="cta cta-esaip" href="esaip/esaip.html">
+          <span class="cta-label">Formation</span>
+          <span class="cta-sublabel">ESAIP</span>
+        </a>
+        <a class="cta cta-projets" href="projets/projets.html">
+          <span class="cta-label">Réalisations</span>
+          <span class="cta-sublabel">Projets</span>
+        </a>
+        <a class="cta cta-competences" href="competences/competences.html">
+          <span class="cta-label">Expertise</span>
+          <span class="cta-sublabel">Compétences</span>
+        </a>
+      </div>
     </div>
-  </section>
-</main>
+  </main>
 
-<footer><p>© 2025 Thomas Finkelstein — Pro</p></footer>
+  <!-- Back to Menu -->
+  <a class="back-menu" href="../Menu/menu.html" aria-label="Retour au menu principal">
+    <span>↩</span> Menu
+  </a>
+
+  <script>
+    // Create animated particles
+    const particlesContainer = document.querySelector('.particles');
+    for (let i = 0; i < 50; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 15 + 's';
+      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+      particlesContainer.appendChild(particle);
+    }
+
+    // Prevent flash on page show
+    window.addEventListener('pageshow', (e) => {
+      document.body.classList.add('ready');
+    });
+  </script>
 </body>
 </html>

@@ -4,38 +4,272 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ESAIP | Thomas Finkelstein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../pro.css">
   <link rel="stylesheet" href="esaip.css">
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo">ESAIP</div>
-    <ul class="nav-links">
-      <li><a href="../index.html">Accueil</a></li>
-      <li><a href="../projets/projets.html">Projets</a></li>
-      <li><a href="../competences/competences.html">Compétences</a></li>
-      <li><a href="../../Menu/menu.html" class="retour">Menu</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Fond animé existant -->
+  <div class="grid-background"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="particles"></div>
 
-<main>
-  <section class="hero-esaip">
-    <h1>Parcours à l’ESAIP</h1>
-    <p>De la 3ᵉ à la 5ᵉ année — projets, réseaux, cybersécurité, cloud, développement.</p>
-    <div class="year-buttons">
-      <button class="year-btn y3" onclick="goto('3A')">3ᵉ année</button>
-      <button class="year-btn y4" onclick="goto('4A')">4ᵉ année</button>
-      <button class="year-btn y5" onclick="goto('5A')">5ᵉ année</button>
-    </div>
-  </section>
-</main>
+  <!-- Marque -->
+  <div class="brand">Thomas FINKELSTEIN</div>
 
-<footer><p>© 2025 Thomas Finkelstein — ESAIP</p></footer>
+  <!-- Boutons d'année -->
+  <header class="year-nav">
+    <button class="year-btn active" onclick="navigate('3A')">3ᵉ année</button>
+    <button class="year-btn" onclick="navigate('4A')">4ᵉ année</button>
+    <button class="year-btn" onclick="navigate('5A')">5ᵉ année</button>
+  </header>
 
-<script>
-  function goto(y){ window.location.href = y + '.html'; }
-</script>
+  <main>
+    <!-- ===== 3E ANNEE ===== -->
+    <section id="annee3" class="year-section">
+      <section class="intro">
+        <p>Une année dédiée à la consolidation des bases techniques, au développement logiciel et à la compréhension des réseaux.</p>
+      </section>
+
+      <section class="timeline">
+        <!-- UE01 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE01 - Sciences 1</h2>
+            <ul>
+              <li>Théorie des graphes et réseau de Pétri</li>
+              <li>Mathématiques pour le numérique</li>
+              <li>Prérequis et intégration scientifique</li>
+              <li>Analyse mathématiques</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE02 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE02 - Développement & Analyse de données</h2>
+            <ul>
+              <li>Spécification et tests</li>
+              <li>Modélisation UML</li>
+              <li>Programmation orientée objet</li>
+              <li>Base de données relationnelle</li>
+              <li>Programmation web</li>
+              <li>Programmation front-end</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE03 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE03 - Systèmes et Réseaux</h2>
+            <ul>
+              <li>Introduction aux réseaux</li>
+              <li>Réseaux avancés</li>
+              <li>Administration Linux</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE04 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE04 - Entreprise & Management de projet</h2>
+            <ul>
+              <li>Communication orale</li>
+              <li>Communication écrite</li>
+              <li>Projet professionnel et personnel</li>
+              <li>RSE - Numérique Responsable</li>
+              <li>Gestion de projet</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE05 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE05 - Langues & Cultures Internationales</h2>
+            <ul>
+              <li>Anglais</li>
+              <li>Culture internationale</li>
+              <li>Espagnol</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE10 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE10 - Séjour d'études LV1</h2>
+            <ul>
+              <li>Riga Technical University (Lettonie)</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <!-- ===== 4E ANNEE ===== -->
+    <section id="annee4" class="year-section">
+      <div class="intro">
+        <p>Une année marquée par l'ouverture vers la data, l'intelligence artificielle et les environnements de production modernes.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- UE01 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE01 — Sciences</h2>
+            <ul>
+              <li>Traitement de l'image</li>
+              <li>Algorithmes d'optimisation</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE02 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE02 — Développement & Analyse de données</h2>
+            <ul>
+              <li>Programmation back end</li>
+              <li>DevOps</li>
+              <li>Machine Learning</li>
+              <li>Projet de développement éco-conception</li>
+              <li>Développement Android</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE03 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE03 — Systèmes & Réseaux</h2>
+            <ul>
+              <li>Réseaux LAN/WAN</li>
+              <li>Administration système Windows</li>
+              <li>Fondamentaux de la cybersécurité</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE04 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE04 — Projets</h2>
+            <ul>
+              <li>Projet Activ'ESAIP</li>
+              <li>Projet scientifique d'initiation à la recherche 1</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE05 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE05 — Entreprise & Management de projet</h2>
+            <ul>
+              <li>Gestion de projet Agile</li>
+              <li>Communication orale</li>
+              <li>Communication écrite</li>
+              <li>Projet professionnel et personnel</li>
+              <li>RSE</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE06 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE06 — Majeure Intelligence Artificielle</h2>
+            <ul>
+              <li>Data engineering and analysis</li>
+              <li>Ethic and AI</li>
+              <li>Explainable AI</li>
+              <li>Machine learning with Python</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE07 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE07 — Langues</h2>
+            <ul>
+              <li>Anglais</li>
+              <li>Espagnol</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- UE08 -->
+        <article class="module">
+          <div class="dot"></div>
+          <div class="module-content">
+            <h2>UE08 — Stage</h2>
+            <ul>
+              <li>Stage en entreprise</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 5E ANNEE (placeholder) ===== -->
+    <section id="annee5" class="year-section">
+      <div class="intro">
+        <p>La 5ᵉ année reste à venir&nbsp;!</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bouton retour -->
+  <a class="back-btn" href="../index.html" aria-label="Retour à l'accueil professionnel">
+    <span>↩</span> Retour
+  </a>
+
+  <script>
+    // Navigation par scroll fluide sur la même page
+    function navigate(year) {
+      const id = year === '3A' ? 'annee3' : year === '4A' ? 'annee4' : 'annee5';
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Particules (conserve ton effet existant)
+    const particlesContainer = document.querySelector('.particles');
+    if (particlesContainer) {
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Prévenir le flash
+    window.addEventListener('pageshow', () => document.body.classList.add('ready'));
+  </script>
 </body>
 </html>
