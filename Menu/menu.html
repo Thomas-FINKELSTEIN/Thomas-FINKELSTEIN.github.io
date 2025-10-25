@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Finkelstein | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Thomas Finkelstein | Menu principal</title>
+  <link rel="stylesheet" href="menu.css">
 </head>
 <body>
   <div class="landing">
@@ -24,9 +24,9 @@
       const transition = document.getElementById('transition');
       transition.classList.add('active');
       setTimeout(() => {
-        if (choice === 'pro') window.location.href = 'pro/index.html';
-        else window.location.href = 'perso/index.html';
-      }, 800); // Durée de la transition
+        if (choice === 'pro') window.location.href = '../pro/index.html';
+        else window.location.href = '../perso/index.html';
+      }, 800); // Durée de la transition avant redirection
     }
   </script>
 </body>
