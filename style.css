@@ -1,58 +1,83 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-color: #f5f5f5;
-    color: #222;
-    line-height: 1.6;
+  height: 100vh;
+  background: linear-gradient(135deg, #0e0e0f, #1c1c1e);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-header {
-    background: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
+.landing {
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
 }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+.title {
+  font-size: 3em;
+  letter-spacing: 2px;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.subtitle {
+  font-size: 1.2em;
+  color: #aaa;
+  margin-bottom: 40px;
 }
 
-section {
-    padding: 40px 10%;
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
-h2 {
-    color: #222;
-    margin-bottom: 10px;
-    border-left: 5px solid #0078d7;
-    padding-left: 10px;
+.btn {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  font-size: 1.2em;
+  padding: 15px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
+.btn.pro:hover {
+  background: #0078ff;
+  border-color: #0078ff;
+  box-shadow: 0 0 20px #0078ff80;
 }
 
-ul {
-    list-style: none;
-    margin-top: 10px;
+.btn.perso:hover {
+  background: linear-gradient(45deg, #ff7b00, #ff00aa);
+  border-color: transparent;
+  box-shadow: 0 0 25px #ff00aa70;
 }
 
-ul li {
-    margin: 8px 0;
+.transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.8s ease-in-out;
+  z-index: 10;
+}
+
+.transition.active {
+  transform: scaleY(1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
