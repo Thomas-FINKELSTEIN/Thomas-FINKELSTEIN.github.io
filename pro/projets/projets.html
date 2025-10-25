@@ -3,30 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projets de Thomas Finkelstein - IA, Data Science, Développement Web et Sécurité">
   <title>Projets | Thomas Finkelstein</title>
-  <link rel="stylesheet" href="../pro.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="projets.css">
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo">Projets</div>
-    <ul class="nav-links">
-      <li><a href="../index.html">Accueil</a></li>
-      <li><a href="../esaip/esaip.html">ESAIP</a></li>
-      <li><a href="../competences/competences.html">Compétences</a></li>
-      <li><a href="../../Menu/menu.html" class="retour">Menu</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Background Effects -->
+  <div class="background-container" aria-hidden="true">
+    <div class="gradient-orb gradient-orb--blue"></div>
+    <div class="gradient-orb gradient-orb--purple"></div>
+    <div class="gradient-orb gradient-orb--cyan"></div>
+    <div class="grid-overlay"></div>
+  </div>
 
-<main>
-  <section class="hero">
-    <h1>Mes projets</h1>
-    <p>Réalisations marquantes (ESAIP, RTU, perso). À compléter.</p>
-  </section>
-</main>
+  <!-- Header Brand -->
+  <header class="site-header">
+    <div class="brand">Thomas Finkelstein</div>
+  </header>
 
-<footer><p>© 2025 Thomas Finkelstein — Projets</p></footer>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Introduction -->
+    <section class="intro-section">
+      <h1 class="page-title">Mes projets</h1>
+      <p class="intro-text">
+        Découvrez mes projets, entre ingénierie, recherche et création numérique.
+      </p>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-section">
+      <div class="projects-grid">
+        
+        <!-- Project 1: PSIR -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="/assets/projets/psir/thumbnail.png" alt="Miniature du projet PSIR - Défenses adaptatives pour agents LLM">
+          </div>
+          <div class="project-content">
+            <h2 class="project-title">Défenses adaptatives pour agents LLM multi-outils</h2>
+            <p class="project-description">
+              Étude des attaques par enchaînement d'outils et conception d'un agent défensif intelligent.
+            </p>
+            <div class="tags">
+              <span class="tag">IA</span>
+              <span class="tag">Sécurité</span>
+              <span class="tag">LLM</span>
+              <span class="tag">ESAIP</span>
+              <span class="tag">Recherche</span>
+            </div>
+            <a href="/pro/projets/psir.html" class="project-btn">
+              <span>Voir le projet</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: Activ'ESAIP -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="/assets/projets/activesaip/thumbnail.png" alt="Miniature du projet Activ'ESAIP">
+          </div>
+          <div class="project-content">
+            <h2 class="project-title">Activ'ESAIP</h2>
+            <p class="project-description">
+              Plateforme interne de gestion d'activités et de projets étudiants.
+            </p>
+            <div class="tags">
+              <span class="tag">Web</span>
+              <span class="tag">Collaboration</span>
+              <span class="tag">ESAIP</span>
+            </div>
+            <a href="/pro/projets/activesaip.html" class="project-btn">
+              <span>Voir le projet</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Portfolio -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="/assets/projets/portfolio/thumbnail.png" alt="Miniature du portfolio personnel">
+          </div>
+          <div class="project-content">
+            <h2 class="project-title">Portfolio personnel</h2>
+            <p class="project-description">
+              Développement du site web personnel servant de vitrine interactive de mes projets et parcours.
+            </p>
+            <div class="tags">
+              <span class="tag">Web</span>
+              <span class="tag">Design</span>
+              <span class="tag">HTML/CSS</span>
+              <span class="tag">GitHub Pages</span>
+            </div>
+            <a href="/index.html" class="project-btn">
+              <span>Voir le projet</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Réseaux et Sécurité -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="/assets/projets/reseaux/thumbnail.png" alt="Miniature du laboratoire Réseaux et Sécurité">
+          </div>
+          <div class="project-content">
+            <h2 class="project-title">Laboratoire Réseaux et Sécurité</h2>
+            <p class="project-description">
+              Expérimentations sur la configuration de pare-feux, serveurs et routage en environnement isolé.
+            </p>
+            <div class="tags">
+              <span class="tag">Réseaux</span>
+              <span class="tag">Sécurité</span>
+              <span class="tag">Linux</span>
+            </div>
+            <a href="/pro/projets/reseaux.html" class="project-btn">
+              <span>Voir le projet</span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Back Button -->
+  <a href="../index.html" class="back-btn" aria-label="Retour à l'accueil professionnel">
+    <span aria-hidden="true">↩</span>
+    <span>Retour</span>
+  </a>
 </body>
 </html>

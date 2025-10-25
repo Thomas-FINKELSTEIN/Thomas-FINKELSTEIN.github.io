@@ -1,26 +1,529 @@
-/* ====== PRO > COMPÉTENCES ====== */
-@import url("../pro.css");
-
-.hero h1{color:#7cc4ff}
-.skills-wrap{padding:56px 10%}
-.skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-.skill-card{
-  background:#141416;border:1px solid #222;border-radius:14px;padding:22px;
-  box-shadow:0 12px 28px rgba(0,0,0,.35);
+/* ==================== VARIABLES ==================== */
+:root {
+  --bg-primary: #0a0a0b;
+  --bg-secondary: #111113;
+  --surface: #1a1a1d;
+  --surface-elevated: #232326;
+  --border: #2a2a2e;
+  --border-subtle: #1f1f23;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #b4b4b9;
+  --text-tertiary: #78787d;
+  
+  --accent-blue: #0078ff;
+  --accent-blue-hover: #0066dd;
+  --accent-blue-dim: rgba(0, 120, 255, 0.12);
+  --accent-cyan: #00e5cc;
+  --accent-purple: #8b5cf6;
+  
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.skill-card h3{margin-bottom:10px;color:#ffffff}
-.skill-list{list-style:none;display:grid;gap:10px}
-.skill-list li{
-  display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid #212121;border-radius:10px;background:#0f0f10;
-}
-.skill-list li span{color:#e9e9e9}
-.level{
-  min-width:120px;text-align:right;color:#bfe2ff;font-weight:600;font-variant-numeric:tabular-nums;
+
+/* ==================== RESET & BASE ==================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Soft skills ruban */
-.soft{margin-top:26px}
-.soft .badge{margin-right:8px;border-color:#2a2a2a;color:#f0f0f0}
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-/* Responsive */
-@media (max-width: 900px){ .skill-grid{grid-template-columns:1fr} }
+body {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==================== BACKGROUND EFFECTS ==================== */
+.background-container {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: float 20s ease-in-out infinite;
+}
+
+.gradient-orb--blue {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+  top: -200px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.gradient-orb--purple {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+  bottom: -150px;
+  right: -150px;
+  animation-delay: -7s;
+}
+
+.gradient-orb--cyan {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -14s;
+  opacity: 0.08;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 80%);
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 8rem;
+}
+
+/* ==================== INTRODUCTION SECTION ==================== */
+.intro-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ==================== SECTION TITLES ==================== */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==================== TECHNICAL SKILLS SECTION ==================== */
+.technical-section {
+  margin-bottom: 5rem;
+  animation: fadeIn 0.8s ease forwards 0.2s;
+  opacity: 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-blue-dim), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-blue);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.skill-list li {
+  padding: 0.625rem 1rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  position: relative;
+  padding-left: 2rem;
+}
+
+.skill-list li::before {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all var(--transition-fast);
+}
+
+.skill-list li:hover {
+  background: var(--surface-elevated);
+  border-color: var(--accent-blue);
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+.skill-list li:hover::before {
+  opacity: 1;
+  width: 8px;
+  height: 8px;
+}
+
+/* ==================== SOFT SKILLS SECTION ==================== */
+.soft-skills-section {
+  margin-bottom: 5rem;
+  animation: fadeIn 0.8s ease forwards 0.4s;
+  opacity: 0;
+}
+
+.skills-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.bubble {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all var(--transition-base);
+  cursor: default;
+}
+
+.bubble:hover {
+  background: var(--accent-blue-dim);
+  border-color: var(--accent-blue);
+  color: var(--text-primary);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 120, 255, 0.2);
+}
+
+/* ==================== TOOLS SECTION ==================== */
+.tools-section {
+  margin-bottom: 5rem;
+  animation: fadeIn 0.8s ease forwards 0.6s;
+  opacity: 0;
+}
+
+.tools-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all var(--transition-base);
+  cursor: default;
+}
+
+.tool-icon {
+  width: 64px;
+  height: 64px;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.tool-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.tool-item:hover .tool-icon {
+  color: var(--accent-blue);
+  transform: translateY(-4px) scale(1.1);
+  filter: drop-shadow(0 4px 12px rgba(0, 120, 255, 0.4));
+}
+
+.tool-item:hover .tool-name {
+  color: var(--text-primary);
+}
+
+/* ==================== CV SECTION ==================== */
+.cv-section {
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards 0.8s;
+  opacity: 0;
+}
+
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--accent-blue);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--accent-blue);
+}
+
+.cv-btn:hover {
+  background: var(--accent-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 120, 255, 0.4);
+}
+
+.cv-btn:active {
+  transform: translateY(0);
+}
+
+.cv-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* ==================== BACK BUTTON ==================== */
+.back-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--surface);
+  color: var(--text-primary);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  z-index: 100;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  background: var(--surface-elevated);
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-lg);
+}
+
+.back-btn:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 3rem 1rem 6rem;
+  }
+
+  .page-title {
+    font-size: 2.25rem;
+  }
+
+  .intro-text {
+    font-size: 1.125rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tools-grid {
+    gap: 2rem;
+  }
+
+  .tool-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .back-btn {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 2rem 0.75rem 5rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 1.25rem;
+  }
+
+  .tools-grid {
+    gap: 1.5rem;
+  }
+
+  .tool-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bubble {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .cv-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* ==================== ACCESSIBILITY ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.skill-card:focus-visible,
+.bubble:focus-visible,
+.tool-item:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
