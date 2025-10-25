@@ -3,45 +3,590 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parcours académique à l'ESAIP - Thomas Finkelstein, Ingénieur du Numérique">
   <title>ESAIP | Thomas Finkelstein</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../pro.css">
-  <link rel="stylesheet" href="esaip.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==================== VARIABLES ==================== */
+    :root {
+      --bg-primary: #0a0a0b;
+      --bg-secondary: #111113;
+      --surface: #1a1a1d;
+      --surface-elevated: #232326;
+      --border: #2a2a2e;
+      --border-subtle: #1f1f23;
+      
+      --text-primary: #ffffff;
+      --text-secondary: #b4b4b9;
+      --text-tertiary: #78787d;
+      
+      --accent-blue: #0078ff;
+      --accent-blue-hover: #0066dd;
+      --accent-blue-dim: rgba(0, 120, 255, 0.12);
+      --accent-cyan: #00e5cc;
+      --accent-purple: #8b5cf6;
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+      
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ==================== RESET & BASE ==================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ==================== BACKGROUND EFFECTS ==================== */
+    .background-container {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .gradient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .gradient-orb--blue {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+      top: -200px;
+      left: -200px;
+      animation-delay: 0s;
+    }
+
+    .gradient-orb--purple {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+      bottom: -150px;
+      right: -150px;
+      animation-delay: -7s;
+    }
+
+    .gradient-orb--cyan {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, var(--accent-cyan) 0%, transparent 70%);
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: -14s;
+      opacity: 0.08;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(var(--border-subtle) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 80%);
+    }
+
+    /* ==================== HEADER ==================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 11, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: 0.02em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .year-navigation {
+      display: flex;
+      gap: 0.5rem;
+      background: var(--surface);
+      padding: 0.25rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .year-btn {
+      padding: 0.5rem 1.25rem;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all var(--transition-base);
+      position: relative;
+    }
+
+    .year-btn:hover {
+      color: var(--text-primary);
+      background: var(--surface-elevated);
+    }
+
+    .year-btn.active {
+      color: var(--text-primary);
+      background: var(--accent-blue);
+    }
+
+    .year-btn:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    /* ==================== MAIN CONTENT ==================== */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .year-section {
+      margin-bottom: 6rem;
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .year-section:not(:first-child) {
+      padding-top: 4rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ==================== TIMELINE ==================== */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--accent-blue) 10%,
+        var(--accent-blue) 90%,
+        transparent 100%
+      );
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .timeline-item:nth-child(even) .module-card {
+      grid-column: 2;
+    }
+
+    .timeline-item:nth-child(even)::after {
+      left: auto;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 2rem;
+      width: 14px;
+      height: 14px;
+      background: var(--accent-blue);
+      border: 3px solid var(--bg-primary);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 0 4px var(--accent-blue-dim);
+      z-index: 2;
+    }
+
+    /* ==================== MODULE CARDS ==================== */
+    .module-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: all var(--transition-base);
+      position: relative;
+    }
+
+    .module-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, var(--accent-blue-dim), transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
+    .module-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-blue);
+    }
+
+    .module-card:hover::before {
+      opacity: 1;
+    }
+
+    .module-header {
+      margin-bottom: 1rem;
+    }
+
+    .module-code {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-blue);
+      background: var(--accent-blue-dim);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .module-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .module-content {
+      list-style: none;
+    }
+
+    .module-content li {
+      padding: 0.625rem 0;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: color var(--transition-fast);
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .module-content li:last-child {
+      border-bottom: none;
+    }
+
+    .module-content li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--accent-blue);
+      border-radius: 50%;
+      opacity: 0.5;
+      transition: opacity var(--transition-fast);
+    }
+
+    .module-content li:hover {
+      color: var(--text-primary);
+    }
+
+    .module-content li:hover::before {
+      opacity: 1;
+    }
+
+    /* ==================== 5TH YEAR PLACEHOLDER ==================== */
+    .placeholder-section {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, var(--surface) 0%, var(--bg-secondary) 100%);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .placeholder-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.5;
+    }
+
+    .placeholder-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .placeholder-text {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ==================== BACK BUTTON ==================== */
+    .back-button {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.5rem;
+      background: var(--surface);
+      color: var(--text-primary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-md);
+      z-index: 50;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
+      background: var(--surface-elevated);
+      border-color: var(--accent-blue);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .back-button:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .year-navigation {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .timeline::before {
+        left: 0;
+        transform: none;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-left: 2rem;
+      }
+
+      .timeline-item:nth-child(even) .module-card {
+        grid-column: 1;
+      }
+
+      .timeline-item::after {
+        left: -7px;
+        transform: none;
+      }
+
+      .timeline-item:nth-child(even)::after {
+        left: -7px;
+        right: auto;
+        transform: none;
+      }
+
+      .back-button {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.75rem 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-content {
+        padding: 2rem 1rem 4rem;
+      }
+
+      .year-btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8125rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .section-description {
+        font-size: 1rem;
+      }
+
+      .placeholder-section {
+        padding: 4rem 1.5rem;
+      }
+    }
+
+    /* ==================== ACCESSIBILITY ==================== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
 </head>
 <body>
-  <!-- Fond animé existant -->
-  <div class="grid-background"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="particles"></div>
+  <!-- Background Effects -->
+  <div class="background-container" aria-hidden="true">
+    <div class="gradient-orb gradient-orb--blue"></div>
+    <div class="gradient-orb gradient-orb--purple"></div>
+    <div class="gradient-orb gradient-orb--cyan"></div>
+    <div class="grid-overlay"></div>
+  </div>
 
-  <!-- Marque -->
-  <div class="brand">Thomas FINKELSTEIN</div>
-
-  <!-- Boutons d'année -->
-  <header class="year-nav">
-    <button class="year-btn active" onclick="navigate('3A')">3ᵉ année</button>
-    <button class="year-btn" onclick="navigate('4A')">4ᵉ année</button>
-    <button class="year-btn" onclick="navigate('5A')">5ᵉ année</button>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand">Thomas Finkelstein</div>
+      <nav class="year-navigation" aria-label="Navigation par année">
+        <button class="year-btn active" data-year="3" aria-label="3ème année">3ᵉ année</button>
+        <button class="year-btn" data-year="4" aria-label="4ème année">4ᵉ année</button>
+        <button class="year-btn" data-year="5" aria-label="5ème année">5ᵉ année</button>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <!-- ===== 3E ANNEE ===== -->
-    <section id="annee3" class="year-section">
-      <section class="intro">
-        <p>Une année dédiée à la consolidation des bases techniques, au développement logiciel et à la compréhension des réseaux.</p>
-      </section>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- 3rd Year -->
+    <section id="year-3" class="year-section">
+      <header class="section-header">
+        <h1 class="section-title">3ᵉ année</h1>
+        <p class="section-description">
+          Consolidation des bases techniques, développement logiciel et compréhension des réseaux.
+        </p>
+      </header>
 
-      <section class="timeline">
-        <!-- UE01 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE01 - Sciences 1</h2>
-            <ul>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE01</span>
+              <h2 class="module-title">Sciences 1</h2>
+            </header>
+            <ul class="module-content">
               <li>Théorie des graphes et réseau de Pétri</li>
               <li>Mathématiques pour le numérique</li>
               <li>Prérequis et intégration scientifique</li>
@@ -50,12 +595,13 @@
           </div>
         </article>
 
-        <!-- UE02 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE02 - Développement & Analyse de données</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE02</span>
+              <h2 class="module-title">Développement & Analyse de données</h2>
+            </header>
+            <ul class="module-content">
               <li>Spécification et tests</li>
               <li>Modélisation UML</li>
               <li>Programmation orientée objet</li>
@@ -66,12 +612,13 @@
           </div>
         </article>
 
-        <!-- UE03 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE03 - Systèmes et Réseaux</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE03</span>
+              <h2 class="module-title">Systèmes et Réseaux</h2>
+            </header>
+            <ul class="module-content">
               <li>Introduction aux réseaux</li>
               <li>Réseaux avancés</li>
               <li>Administration Linux</li>
@@ -79,12 +626,13 @@
           </div>
         </article>
 
-        <!-- UE04 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE04 - Entreprise & Management de projet</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE04</span>
+              <h2 class="module-title">Entreprise & Management de projet</h2>
+            </header>
+            <ul class="module-content">
               <li>Communication orale</li>
               <li>Communication écrite</li>
               <li>Projet professionnel et personnel</li>
@@ -94,12 +642,13 @@
           </div>
         </article>
 
-        <!-- UE05 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE05 - Langues & Cultures Internationales</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE05</span>
+              <h2 class="module-title">Langues & Cultures Internationales</h2>
+            </header>
+            <ul class="module-content">
               <li>Anglais</li>
               <li>Culture internationale</li>
               <li>Espagnol</li>
@@ -107,44 +656,50 @@
           </div>
         </article>
 
-        <!-- UE10 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE10 - Séjour d'études LV1</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE10</span>
+              <h2 class="module-title">Séjour d'études LV1</h2>
+            </header>
+            <ul class="module-content">
               <li>Riga Technical University (Lettonie)</li>
             </ul>
           </div>
         </article>
-      </section>
+      </div>
     </section>
 
-    <!-- ===== 4E ANNEE ===== -->
-    <section id="annee4" class="year-section">
-      <div class="intro">
-        <p>Une année marquée par l'ouverture vers la data, l'intelligence artificielle et les environnements de production modernes.</p>
-      </div>
+    <!-- 4th Year -->
+    <section id="year-4" class="year-section">
+      <header class="section-header">
+        <h1 class="section-title">4ᵉ année</h1>
+        <p class="section-description">
+          Ouverture vers la data, l'intelligence artificielle et les environnements de production modernes.
+        </p>
+      </header>
 
       <div class="timeline">
-        <!-- UE01 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE01 — Sciences</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE01</span>
+              <h2 class="module-title">Sciences</h2>
+            </header>
+            <ul class="module-content">
               <li>Traitement de l'image</li>
               <li>Algorithmes d'optimisation</li>
             </ul>
           </div>
         </article>
 
-        <!-- UE02 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE02 — Développement & Analyse de données</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE02</span>
+              <h2 class="module-title">Développement & Analyse de données</h2>
+            </header>
+            <ul class="module-content">
               <li>Programmation back end</li>
               <li>DevOps</li>
               <li>Machine Learning</li>
@@ -154,12 +709,13 @@
           </div>
         </article>
 
-        <!-- UE03 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE03 — Systèmes & Réseaux</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE03</span>
+              <h2 class="module-title">Systèmes & Réseaux</h2>
+            </header>
+            <ul class="module-content">
               <li>Réseaux LAN/WAN</li>
               <li>Administration système Windows</li>
               <li>Fondamentaux de la cybersécurité</li>
@@ -167,24 +723,26 @@
           </div>
         </article>
 
-        <!-- UE04 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE04 — Projets</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE04</span>
+              <h2 class="module-title">Projets</h2>
+            </header>
+            <ul class="module-content">
               <li>Projet Activ'ESAIP</li>
               <li>Projet scientifique d'initiation à la recherche 1</li>
             </ul>
           </div>
         </article>
 
-        <!-- UE05 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE05 — Entreprise & Management de projet</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE05</span>
+              <h2 class="module-title">Entreprise & Management de projet</h2>
+            </header>
+            <ul class="module-content">
               <li>Gestion de projet Agile</li>
               <li>Communication orale</li>
               <li>Communication écrite</li>
@@ -194,12 +752,13 @@
           </div>
         </article>
 
-        <!-- UE06 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE06 — Majeure Intelligence Artificielle</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE06</span>
+              <h2 class="module-title">Majeure Intelligence Artificielle</h2>
+            </header>
+            <ul class="module-content">
               <li>Data engineering and analysis</li>
               <li>Ethic and AI</li>
               <li>Explainable AI</li>
@@ -208,24 +767,26 @@
           </div>
         </article>
 
-        <!-- UE07 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE07 — Langues</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE07</span>
+              <h2 class="module-title">Langues</h2>
+            </header>
+            <ul class="module-content">
               <li>Anglais</li>
               <li>Espagnol</li>
             </ul>
           </div>
         </article>
 
-        <!-- UE08 -->
-        <article class="module">
-          <div class="dot"></div>
-          <div class="module-content">
-            <h2>UE08 — Stage</h2>
-            <ul>
+        <article class="timeline-item">
+          <div class="module-card">
+            <header class="module-header">
+              <span class="module-code">UE08</span>
+              <h2 class="module-title">Stage</h2>
+            </header>
+            <ul class="module-content">
               <li>Stage en entreprise</li>
             </ul>
           </div>
@@ -233,43 +794,73 @@
       </div>
     </section>
 
-    <!-- ===== 5E ANNEE (placeholder) ===== -->
-    <section id="annee5" class="year-section">
-      <div class="intro">
-        <p>La 5ᵉ année reste à venir&nbsp;!</p>
+    <!-- 5th Year -->
+    <section id="year-5" class="year-section">
+      <header class="section-header">
+        <h1 class="section-title">5ᵉ année</h1>
+      </header>
+      <div class="placeholder-section">
+        <div class="placeholder-icon" aria-hidden="true">🚀</div>
+        <h2 class="placeholder-title">À venir</h2>
+        <p class="placeholder-text">
+          La cinquième année de mon parcours à l'ESAIP débutera prochainement.
+        </p>
       </div>
     </section>
   </main>
 
-  <!-- Bouton retour -->
-  <a class="back-btn" href="../index.html" aria-label="Retour à l'accueil professionnel">
-    <span>↩</span> Retour
+  <!-- Back Button -->
+  <a href="../index.html" class="back-button" aria-label="Retour à la page d'accueil">
+    <span aria-hidden="true">←</span>
+    <span>Retour</span>
   </a>
 
   <script>
-    // Navigation par scroll fluide sur la même page
-    function navigate(year) {
-      const id = year === '3A' ? 'annee3' : year === '4A' ? 'annee4' : 'annee5';
-      const target = document.getElementById(id);
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Year navigation
+    const yearButtons = document.querySelectorAll('.year-btn');
+    const sections = document.querySelectorAll('.year-section');
 
-    // Particules (conserve ton effet existant)
-    const particlesContainer = document.querySelector('.particles');
-    if (particlesContainer) {
-      for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.top = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-        particlesContainer.appendChild(particle);
-      }
-    }
+    yearButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const year = button.dataset.year;
+        const targetSection = document.getElementById(`year-${year}`);
+        
+        if (targetSection) {
+          // Update active state
+          yearButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          // Scroll to section
+          const headerHeight = document.querySelector('.site-header').offsetHeight;
+          const targetPosition = targetSection.offsetTop - headerHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
 
-    // Prévenir le flash
-    window.addEventListener('pageshow', () => document.body.classList.add('ready'));
+    // Update active button on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const year = entry.target.id.split('-')[1];
+          yearButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.year === year);
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
