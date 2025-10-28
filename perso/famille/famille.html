@@ -1,33 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Famille | Thomas Finkelstein</title>
-  <link rel="stylesheet" href="../perso.css">
-  <link rel="stylesheet" href="famille.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Famille — Thomas Finkelstein</title>
+
+  <!-- Feuille de style de la page Famille -->
+  <link rel="stylesheet" href="famille.css" />
+
+  <!-- Petite normalisation typographique (optionnelle si déjà présent globalement) -->
+  <meta name="color-scheme" content="dark light" />
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo">Personnel</div>
-    <ul class="nav-links">
-      <li><a href="../index.html">Accueil</a></li>
-      <li><a href="../passions/passions.html">Passions</a></li>
-      <li><a href="../voyages/voyages.html">Voyages</a></li>
-      <li><a href="../education/education.html">Éducation</a></li>
-      <li><a href="../../Menu/menu.html" class="retour">Menu</a></li>
-    </ul>
-  </nav>
-</header>
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Fil d’Ariane">
+      <a href="../index.html" class="nav__link">Accueil</a>
+      <span aria-hidden="true">/</span>
+      <a href="../menu.html" class="nav__link">Menu</a>
+      <span aria-hidden="true">/</span>
+      <strong class="nav__current">Famille</strong>
+    </nav>
+    <h1 class="page-title">Ma famille</h1>
+    <p class="page-subtitle">Racines catalanes entre mer et montagnes.</p>
+  </header>
 
-<main>
-  <section class="hero">
-    <h1>Ma famille</h1>
-    <p>À compléter.</p>
-  </section>
-</main>
+  <main id="contenu" class="container" role="main">
+    <!-- Bloc intro court -->
+    <section class="intro" aria-labelledby="intro-titre">
+      <h2 id="intro-titre" class="visually-hidden">Introduction</h2>
+      <p class="intro__text">
+        Voici les deux lieux qui structurent mon histoire personnelle :
+        ma naissance à <strong>Perpignan</strong> et mon enfance chez mes parents à <strong>Les&nbsp;Cluses</strong>.
+      </p>
+    </section>
 
-<footer><p>© 2025 Thomas Finkelstein — Famille</p></footer>
+    <!-- Grille des lieux -->
+    <section class="cards" aria-labelledby="lieux-titre">
+      <h2 id="lieux-titre" class="section-title">Lieux clés</h2>
+
+      <div class="grid">
+        <!-- Carte 1 : Perpignan -->
+        <article class="card" itemscope itemtype="https://schema.org/Place">
+          <header class="card__header">
+            <h3 class="card__title">
+              <span class="badge" aria-hidden="true">01</span>
+              Où je suis né&nbsp;: <span itemprop="name">Perpignan</span>
+            </h3>
+            <p class="card__lead">
+              Capitale catalane du Roussillon, au cœur des Pyrénées-Orientales.
+            </p>
+          </header>
+
+          <figure class="map" itemprop="hasMap">
+            <img
+              src="Perpignan.png"
+              alt="Carte situant Perpignan en France"
+              loading="lazy"
+              width="900" height="600"
+            />
+            <figcaption class="map__legend">
+              Département&nbsp;: Pyrénées-Orientales (66) — Région&nbsp;: Occitanie
+            </figcaption>
+          </figure>
+        </article>
+
+        <!-- Carte 2 : Les Cluses -->
+        <article class="card" itemscope itemtype="https://schema.org/Place">
+          <header class="card__header">
+            <h3 class="card__title">
+              <span class="badge" aria-hidden="true">02</span>
+              Où je vivais&nbsp;: <span itemprop="name">Les&nbsp;Cluses</span>
+            </h3>
+            <p class="card__lead">
+              Village au pied des Albères où j’ai grandi chez mes parents.
+            </p>
+          </header>
+
+          <figure class="map" itemprop="hasMap">
+            <img
+              src="lescluses.png"
+              alt="Carte localisant Les Cluses dans les Pyrénées-Orientales"
+              loading="lazy"
+              width="900" height="600"
+            />
+            <figcaption class="map__legend">
+              Département&nbsp;: Pyrénées-Orientales (66) — Région&nbsp;: Occitanie
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <small>© 2025 Thomas Finkelstein — Famille</small>
+  </footer>
 </body>
 </html>

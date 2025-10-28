@@ -3,43 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Univers personnel de Thomas Finkelstein - Parcours, passions et découvertes">
   <title>Personnel | Thomas Finkelstein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="perso.css">
-  <style>
-    .cards{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-top:36px}
-    .card{background:rgba(0,0,0,.25);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:20px 26px;min-width:220px;transition:.3s}
-    .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.4)}
-    .card a{color:#fff;text-decoration:none;font-weight:600}
-    .card small{color:#eee;opacity:.8;display:block;margin-top:6px}
-  </style>
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo">Personnel</div>
-    <ul class="nav-links">
-      <li><a href="passions/passions.html">Passions</a></li>
-      <li><a href="voyages/voyages.html">Voyages</a></li>
-      <li><a href="famille/famille.html">Famille</a></li>
-      <li><a href="education/education.html">Éducation</a></li>
-      <li><a href="../Menu/menu.html" class="retour">Menu</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main>
-  <section class="hero">
-    <h1>Mon univers personnel</h1>
-    <p>Ce qui m’inspire au quotidien.</p>
-    <div class="cards">
-      <div class="card"><a href="passions/passions.html">Passions</a><small>Tech, sport, créa…</small></div>
-      <div class="card"><a href="voyages/voyages.html">Voyages</a><small>Erasmus à Riga</small></div>
-      <div class="card"><a href="famille/famille.html">Famille</a><small>Valeurs</small></div>
-      <div class="card"><a href="education/education.html">Éducation</a><small>Parcours</small></div>
+  <!-- Background Effects -->
+  <div class="background-container" aria-hidden="true">
+    <div class="gradient-orb gradient-orb--pink"></div>
+    <div class="gradient-orb gradient-orb--orange"></div>
+    <div class="gradient-orb gradient-orb--purple"></div>
+    <div class="grid-overlay"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+      <div class="shape shape-6"></div>
     </div>
-  </section>
-</main>
+  </div>
 
-<footer><p>© 2025 Thomas Finkelstein — Perso</p></footer>
+  <!-- Brand -->
+  <div class="brand">Thomas Finkelstein</div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Introduction -->
+    <section class="intro-section">
+      <h1 class="page-title">Au-delà du professionnel</h1>
+      <p class="intro-text">
+        Découvrez ce qui façonne ma vision du monde : mes passions, mon parcours et mes expériences.
+      </p>
+    </section>
+
+    <!-- Navigation Cards Grid -->
+    <section class="nav-grid">
+      
+      <!-- Passions Card -->
+      <a href="passions/passions.html" class="nav-card">
+        <div class="nav-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="nav-card-content">
+          <h2 class="nav-card-title">Passions</h2>
+          <p class="nav-card-description">Technologies, créativité et centres d'intérêt</p>
+        </div>
+        <div class="nav-card-arrow">→</div>
+      </a>
+
+      <!-- Voyages Card -->
+      <a href="voyages/voyages.html" class="nav-card">
+        <div class="nav-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 18H21M3 6H21M8 2L6 6M16 2L18 6M12 6V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 10C8 10 9 13 12 13C15 13 16 10 16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="nav-card-content">
+          <h2 class="nav-card-title">Voyages</h2>
+          <p class="nav-card-description">Erasmus à Riga et découvertes culturelles</p>
+        </div>
+        <div class="nav-card-arrow">→</div>
+      </a>
+
+      <!-- Famille Card -->
+      <a href="famille/famille.html" class="nav-card">
+        <div class="nav-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="nav-card-content">
+          <h2 class="nav-card-title">Famille</h2>
+          <p class="nav-card-description">Valeurs et origines qui me construisent</p>
+        </div>
+        <div class="nav-card-arrow">→</div>
+      </a>
+
+      <!-- Éducation Card -->
+      <a href="education/education.html" class="nav-card">
+        <div class="nav-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 10V15M2 10L12 5L22 10L12 15L2 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 12V17C6 17 8 19 12 19C16 19 18 17 18 17V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="nav-card-content">
+          <h2 class="nav-card-title">Éducation</h2>
+          <p class="nav-card-description">Parcours académique et formation</p>
+        </div>
+        <div class="nav-card-arrow">→</div>
+      </a>
+
+    </section>
+  </main>
+
+  <!-- Back Button -->
+  <a href="../Menu/menu.html" class="back-btn" aria-label="Retour au menu principal">
+    <span aria-hidden="true">↩</span>
+    <span>Menu</span>
+  </a>
 </body>
 </html>

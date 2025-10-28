@@ -3,31 +3,347 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parcours académique de Thomas Finkelstein - ESAIP, Lycée, Collège">
   <title>Éducation | Thomas Finkelstein</title>
-  <link rel="stylesheet" href="../perso.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="education.css">
+  <style>
+    /* Navigation latérale fixe */
+    .side-nav {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 0.5rem;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .side-nav-btn {
+      padding: 0.75rem 1.25rem;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.7);
+      border: 2px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .side-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .side-nav-btn.active {
+      border-color: rgba(139, 92, 246, 0.8);
+      background: rgba(139, 92, 246, 0.1);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    }
+
+    /* Adaptation de l'intro */
+    .intro-text {
+      max-width: 800px !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Responsive pour le menu */
+    @media (max-width: 1024px) {
+      .side-nav {
+        right: 1rem;
+        padding: 0.4rem;
+      }
+      
+      .side-nav-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .side-nav {
+        position: fixed;
+        bottom: 2rem;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+      }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <nav>
-    <div class="logo">Personnel</div>
-    <ul class="nav-links">
-      <li><a href="../index.html">Accueil</a></li>
-      <li><a href="../passions/passions.html">Passions</a></li>
-      <li><a href="../voyages/voyages.html">Voyages</a></li>
-      <li><a href="../famille/famille.html">Famille</a></li>
-      <li><a href="../../Menu/menu.html" class="retour">Menu</a></li>
-    </ul>
+  <!-- Background Effects -->
+  <div class="background-container" aria-hidden="true">
+    <div class="gradient-orb gradient-orb--primary"></div>
+    <div class="gradient-orb gradient-orb--secondary"></div>
+    <div class="gradient-orb gradient-orb--tertiary"></div>
+    <div class="grid-overlay"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+    </div>
+  </div>
+
+  <!-- Brand -->
+  <div class="brand">Thomas Finkelstein</div>
+
+  <!-- Menu de navigation latéral -->
+  <nav class="side-nav">
+    <a href="#scolaires" class="side-nav-btn active" data-section="scolaires">Scolaires</a>
+    <a href="#extrascolaires" class="side-nav-btn" data-section="extrascolaires">Extrascolaires</a>
   </nav>
-</header>
 
-<main>
-  <section class="hero">
-    <h1>Mon parcours éducatif</h1>
-    <p>À compléter.</p>
-  </section>
-</main>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Introduction -->
+    <section class="intro-section">
+      <h1 class="page-title">Mon parcours éducatif</h1>
+      <p class="intro-text">
+        De mes premières années au collège jusqu'à ma spécialisation en intelligence artificielle, 
+        découvrez les étapes clés de ma formation.
+      </p>
+    </section>
 
-<footer><p>© 2025 Thomas Finkelstein — Éducation</p></footer>
+    <!-- Timeline -->
+    <section class="timeline-section" id="scolaires">
+      
+      <!-- 2024 - ESAIP -->
+      <article class="timeline-item">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          <div class="marker-line"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-year">2024</div>
+          <h2 class="timeline-title">École d'Ingénieur ESAIP</h2>
+          <p class="timeline-location">Campus d'Aix-en-Provence</p>
+          <p class="timeline-description">
+            Entrée en première année du cycle ingénieur, spécialisé en 
+            <strong>Informatique et Réseaux</strong>. Formation approfondie en 
+            intelligence artificielle, data science et cybersécurité.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">IA</span>
+            <span class="tag">Data Science</span>
+            <span class="tag">Réseaux</span>
+            <span class="tag">Cybersécurité</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2022-2024 - Prépa -->
+      <article class="timeline-item">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          <div class="marker-line"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-year">2022 - 2024</div>
+          <h2 class="timeline-title">Classe Préparatoire aux Grandes Écoles</h2>
+          <p class="timeline-location">Prépa Intégrée ESAIP</p>
+          <p class="timeline-description">
+            Formation intensive en sciences de l'ingénieur. <strong>Première année MPSI</strong> 
+            (Mathématiques, Physique et Sciences de l'Ingénieur), puis <strong>deuxième année MP</strong> 
+            (Mathématiques et Physique). Obtention du concours d'entrée avec succès.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">MPSI</span>
+            <span class="tag">MP</span>
+            <span class="tag">Mathématiques</span>
+            <span class="tag">Physique</span>
+            <span class="tag">Concours</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2020-2022 - Lycée -->
+      <article class="timeline-item">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          <div class="marker-line"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-year">2020 - 2022</div>
+          <h2 class="timeline-title">Lycée Bon Secours</h2>
+          <p class="timeline-location">Perpignan</p>
+          <p class="timeline-description">
+            Obtention du <strong>Baccalauréat mention Assez-Bien</strong>, 
+            spécialités Mathématiques et Physiques.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">Bac Général</span>
+            <span class="tag">Mention AB</span>
+            <span class="tag">Maths</span>
+            <span class="tag">Physique</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2019 - Brevet -->
+      <article class="timeline-item">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+        </div>
+        <div class="timeline-content">
+          <div class="timeline-year">2019</div>
+          <h2 class="timeline-title">Brevet des Collèges</h2>
+          <p class="timeline-description">
+            Obtention du diplôme national du brevet avec <strong>mention Bien</strong>.
+          </p>
+          <div class="timeline-tags">
+            <span class="tag">DNB</span>
+            <span class="tag">Mention Bien</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Extrascolaire Section -->
+    <section class="extrascolaire-section" id="extrascolaires">
+      <h2 class="section-title">Formations extrascolaires</h2>
+      
+      <div class="extra-grid">
+        
+        <!-- BIA -->
+        <article class="extra-card">
+          <div class="extra-icon">✈️</div>
+          <h3 class="extra-title">Brevet d'Initiation à l'Aéronautique</h3>
+          <div class="extra-year">2021</div>
+          <p class="extra-description">
+            Obtention du BIA avec <strong>mention Bien</strong> et option anglais. 
+            Formation complète sur l'aviation et l'aérospatial.
+          </p>
+          
+          <div class="extra-modules">
+            <h4 class="modules-title">Modules étudiés</h4>
+            <ul class="modules-list">
+              <li>Aérodynamique et mécanique du vol</li>
+              <li>Connaissance des aéronefs</li>
+              <li>Météorologie et aérologie</li>
+              <li>Navigation, réglementation et sécurité des vols</li>
+              <li>Histoire et culture de l'aéronautique et du spatial</li>
+              <li class="module-option">Anglais aéronautique (Option)</li>
+            </ul>
+          </div>
+          
+          <div class="extra-tags">
+            <span class="tag">BIA</span>
+            <span class="tag">Mention Bien</span>
+            <span class="tag">Anglais</span>
+          </div>
+        </article>
+
+        <!-- Permis -->
+        <article class="extra-card">
+          <div class="extra-icon">🚗</div>
+          <h3 class="extra-title">Permis de conduire B</h3>
+          <div class="extra-year">Juin 2022</div>
+          <p class="extra-description">
+            Obtention du permis de conduire catégorie B, renforçant mon autonomie 
+            et ma mobilité personnelle.
+          </p>
+          <div class="extra-tags">
+            <span class="tag">Permis B</span>
+            <span class="tag">Autonomie</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-number">4+</div>
+        <div class="stat-label">Années d'études supérieures</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Diplômes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Concours</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2024</div>
+        <div class="stat-label">Cycle ingénieur ESAIP</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Back Button -->
+  <a href="../index.html" class="back-btn" aria-label="Retour à l'accueil personnel">
+    <span aria-hidden="true">↩</span>
+    <span>Retour</span>
+  </a>
+
+  <script>
+    // Script pour la navigation et le scroll spy
+    document.addEventListener('DOMContentLoaded', function() {
+      const navButtons = document.querySelectorAll('.side-nav-btn');
+      const sections = document.querySelectorAll('#scolaires, #extrascolaires');
+      
+      // Smooth scroll pour les liens
+      navButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+      
+      // Scroll spy pour mettre à jour le bouton actif
+      function updateActiveButton() {
+        let currentSection = '';
+        const scrollPosition = window.scrollY + 200; // Offset pour l'activation
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+        
+        navButtons.forEach(button => {
+          button.classList.remove('active');
+          if (button.getAttribute('data-section') === currentSection) {
+            button.classList.add('active');
+          }
+        });
+      }
+      
+      // Écouter le scroll
+      window.addEventListener('scroll', updateActiveButton);
+      updateActiveButton(); // Appel initial
+    });
+  </script>
 </body>
 </html>
