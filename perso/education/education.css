@@ -34,6 +34,62 @@ body {
 }
 
 /* ============================================
+   ANIMATIONS D'APPARITION
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.015;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
    BACKGROUND EFFECTS
    ============================================ */
 .background-container {
@@ -45,14 +101,15 @@ body {
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
+  animation: fadeIn 1s ease-out;
 }
 
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
   filter: blur(120px);
-  opacity: 0.15;
-  animation: float 20s ease-in-out infinite;
+  opacity: 0;
+  animation: float 20s ease-in-out infinite, fadeIn 1.5s ease-out forwards;
 }
 
 .gradient-orb--primary {
@@ -61,7 +118,7 @@ body {
   background: var(--primary);
   top: -200px;
   right: -200px;
-  animation-delay: 0s;
+  animation-delay: 0s, 0.2s;
 }
 
 .gradient-orb--secondary {
@@ -70,7 +127,7 @@ body {
   background: var(--secondary);
   bottom: -150px;
   left: -150px;
-  animation-delay: -7s;
+  animation-delay: -7s, 0.4s;
 }
 
 .gradient-orb--tertiary {
@@ -80,18 +137,21 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation-delay: -14s;
+  animation-delay: -14s, 0.6s;
 }
 
 @keyframes float {
   0%, 100% {
     transform: translate(0, 0) scale(1);
+    opacity: 0.15;
   }
   33% {
     transform: translate(50px, -50px) scale(1.1);
+    opacity: 0.2;
   }
   66% {
     transform: translate(-30px, 30px) scale(0.9);
+    opacity: 0.12;
   }
 }
 
@@ -105,7 +165,8 @@ body {
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 50px 50px;
-  opacity: 0.5;
+  opacity: 0;
+  animation: fadeIn 2s ease-out 0.5s forwards;
 }
 
 .floating-shapes {
@@ -117,8 +178,16 @@ body {
 .shape {
   position: absolute;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  opacity: 0.03;
-  animation: rotate 30s linear infinite;
+  opacity: 0;
+  animation: rotate 30s linear infinite, fadeIn 2s ease-out forwards;
+}
+
+.shape::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0.015;
 }
 
 .shape-1 {
@@ -127,7 +196,8 @@ body {
   top: 10%;
   left: 10%;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  animation-duration: 25s;
+  animation-duration: 25s, 2s;
+  animation-delay: 0s, 0.8s;
 }
 
 .shape-2 {
@@ -136,8 +206,9 @@ body {
   top: 60%;
   right: 15%;
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-  animation-duration: 35s;
-  animation-direction: reverse;
+  animation-duration: 35s, 2s;
+  animation-direction: reverse, normal;
+  animation-delay: 0s, 1s;
 }
 
 .shape-3 {
@@ -146,7 +217,8 @@ body {
   bottom: 10%;
   left: 20%;
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-  animation-duration: 40s;
+  animation-duration: 40s, 2s;
+  animation-delay: 0s, 1.2s;
 }
 
 .shape-4 {
@@ -155,8 +227,9 @@ body {
   top: 40%;
   right: 30%;
   clip-path: circle(50% at 50% 50%);
-  animation-duration: 30s;
-  animation-direction: reverse;
+  animation-duration: 30s, 2s;
+  animation-direction: reverse, normal;
+  animation-delay: 0s, 1.4s;
 }
 
 @keyframes rotate {
@@ -184,6 +257,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: slideInLeft 0.6s ease-out;
 }
 
 /* ============================================
@@ -214,6 +288,7 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: -2px;
+  animation: fadeInUp 0.8s ease-out 0.1s backwards;
 }
 
 .intro-text {
@@ -222,6 +297,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 /* ============================================
@@ -242,6 +318,7 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   transition: all 0.3s ease;
+  animation: slideInRight 0.8s ease-out 0.3s backwards;
 }
 
 .side-nav-btn {
@@ -286,7 +363,15 @@ body {
   gap: 2rem;
   margin-bottom: 3rem;
   position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
+
+.timeline-item:nth-child(1) { animation-delay: 0.4s; }
+.timeline-item:nth-child(2) { animation-delay: 0.5s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+.timeline-item:nth-child(4) { animation-delay: 0.7s; }
+.timeline-item:nth-child(5) { animation-delay: 0.8s; }
 
 .timeline-marker {
   display: flex;
@@ -303,7 +388,14 @@ body {
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
   position: relative;
   z-index: 2;
+  animation: scaleIn 0.4s ease-out backwards;
 }
+
+.timeline-item:nth-child(1) .marker-dot { animation-delay: 0.5s; }
+.timeline-item:nth-child(2) .marker-dot { animation-delay: 0.6s; }
+.timeline-item:nth-child(3) .marker-dot { animation-delay: 0.7s; }
+.timeline-item:nth-child(4) .marker-dot { animation-delay: 0.8s; }
+.timeline-item:nth-child(5) .marker-dot { animation-delay: 0.9s; }
 
 .marker-line {
   width: 2px;
@@ -413,6 +505,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: fadeInUp 0.8s ease-out 0.9s backwards;
 }
 
 .extra-grid {
@@ -429,7 +522,13 @@ body {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
 }
+
+.extra-card:nth-child(1) { animation-delay: 1s; }
+.extra-card:nth-child(2) { animation-delay: 1.1s; }
+.extra-card:nth-child(3) { animation-delay: 1.2s; }
 
 .extra-card::before {
   content: '';
@@ -573,7 +672,14 @@ body {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  animation: scaleIn 0.6s ease-out forwards;
 }
+
+.stat-card:nth-child(1) { animation-delay: 1.3s; }
+.stat-card:nth-child(2) { animation-delay: 1.4s; }
+.stat-card:nth-child(3) { animation-delay: 1.5s; }
+.stat-card:nth-child(4) { animation-delay: 1.6s; }
 
 .stat-card::before {
   content: '';
@@ -638,6 +744,7 @@ body {
   font-weight: 500;
   transition: all 0.3s ease;
   z-index: 1000;
+  animation: slideInLeft 0.8s ease-out 0.4s backwards;
 }
 
 .back-btn:hover {
@@ -769,5 +876,18 @@ body {
 
   .gradient-orb {
     filter: blur(80px);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - RÉDUCTION DES MOUVEMENTS
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
