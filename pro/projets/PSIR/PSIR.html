@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projet PSIR - Défenses adaptatives pour agents LLM multi-outils - Thomas Finkelstein">
+  <title>Projet PSIR | Thomas Finkelstein</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="PSIR.css">
+</head>
+<body>
+  <!-- Background Effects -->
+  <div class="background-container" aria-hidden="true">
+    <div class="gradient-orb gradient-orb--blue"></div>
+    <div class="gradient-orb gradient-orb--purple"></div>
+    <div class="gradient-orb gradient-orb--cyan"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Header Brand -->
+  <header class="site-header">
+    <div class="brand">Thomas Finkelstein</div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-label">
+        <span class="label-icon" aria-hidden="true">🔬</span>
+        <span>Projet Scientifique d'Initiation à la Recherche</span>
+      </div>
+      <h1 class="hero-title">Défenses adaptatives pour agents LLM multi-outils</h1>
+      <p class="hero-subtitle">Étude des attaques par enchaînement d'outils et conception de défenses préventives adaptatives</p>
+      
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Durée</span>
+          <span class="meta-value">2 semestres</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Formation</span>
+          <span class="meta-value">IR4 - ESAIP</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Équipe</span>
+          <span class="meta-value">4 étudiants</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Context Section -->
+    <section class="content-section">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">📚</span>
+        <h2 class="section-title">Le PSIR : Une formation par la recherche</h2>
+      </div>
+      <div class="section-content">
+        <p class="paragraph">
+          Le PSIR (Projet Scientifique d'Initiation à la Recherche) est un module obligatoire qui s'étend sur deux semestres en 4ème année d'ingénieur à l'ESAIP. Ce projet de dimension scientifique vise à développer les aptitudes et compétences essentielles du diplôme d'ingénieur.
+        </p>
+        <p class="paragraph">
+          Conformément aux exigences de la CTI (Commission des Titres d'Ingénieur), cette activité permet de <strong>conduire un raisonnement inductif</strong> associant rigueur scientifique, vertus du doute et capacité à se remettre en question.
+        </p>
+        
+        <div class="psir-timeline">
+          <div class="timeline-item">
+            <div class="timeline-badge">S7</div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">PSIR 1 - État de l'art</h4>
+              <p class="timeline-period">Septembre - Décembre 2025</p>
+              <p class="timeline-desc">Maîtriser les étapes d'une démarche scientifique à travers un état de l'art complet</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-badge">S8</div>
+            <div class="timeline-content">
+              <h4 class="timeline-title">PSIR 2 - Expérimentation</h4>
+              <p class="timeline-period">Janvier - Mai 2026</p>
+              <p class="timeline-desc">Réaliser un plan d'expérience pour tester les hypothèses formulées</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subject Section -->
+    <section class="content-section highlight-section">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">🎯</span>
+        <h2 class="section-title">Notre sujet de recherche</h2>
+      </div>
+      <div class="section-content">
+        <div class="title-box">
+          <h3 class="box-title">Attaques par enchaînement d'outils contre agents LLM</h3>
+          <p class="box-subtitle">Étude et conception de défenses préventives adaptatives</p>
+        </div>
+        
+        <div class="problematic-box">
+          <div class="problematic-label">Problématique</div>
+          <p class="problematic-text">
+            "Comment concevoir et évaluer des défenses préventives et adaptatives capables de contrer des attaques par enchaînement d'outils dans des agents LLM ?"
+          </p>
+        </div>
+
+        <div class="explanation-box">
+          <h4 class="explanation-title">Contexte scientifique</h4>
+          <p class="paragraph">
+            Les <strong>agents LLM</strong> (Large Language Models) représentent une nouvelle génération d'intelligence artificielle capable d'utiliser de manière autonome différents outils logiciels : API, bases de données, calculateurs, autres IA, etc. Cette capacité d'orchestration multi-outils leur permet de résoudre des tâches complexes de façon autonome.
+          </p>
+          <p class="paragraph">
+            Cependant, cette autonomie ouvre la voie à de nouvelles vulnérabilités. Notre recherche se concentre sur les <strong>failles de sécurité</strong> qui émergent lorsque ces outils sont combinés. Un attaquant pourrait exploiter ces chaînes d'outils pour contourner les défenses traditionnelles. L'enjeu est de comprendre ces mécanismes d'attaque pour concevoir des systèmes de défense adaptatifs et préventifs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Axes -->
+    <section class="content-section">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">🔍</span>
+        <h2 class="section-title">Axes de recherche</h2>
+      </div>
+      <div class="section-content">
+        <p class="paragraph intro-paragraph">
+          Notre travail s'articule autour de cinq axes de recherche interdépendants :
+        </p>
+        
+        <div class="axes-grid">
+          <div class="axis-card">
+            <div class="axis-number">01</div>
+            <h4 class="axis-title">Compréhension des agents LLM multi-outils</h4>
+            <p class="axis-description">Étude approfondie du fonctionnement des agents LLM, de leur architecture, de leurs capacités d'orchestration et de leurs mécanismes de décision autonome.</p>
+          </div>
+          
+          <div class="axis-card">
+            <div class="axis-number">02</div>
+            <h4 class="axis-title">Analyse des vulnérabilités</h4>
+            <p class="axis-description">Identification et classification des vulnérabilités spécifiques qui apparaissent lors de la combinaison et de l'enchaînement d'outils par les agents LLM.</p>
+          </div>
+          
+          <div class="axis-card">
+            <div class="axis-number">03</div>
+            <h4 class="axis-title">Modélisation et détection des menaces</h4>
+            <p class="axis-description">Développement de modèles pour identifier et détecter les enchaînements d'outils potentiellement dangereux avant qu'ils ne causent des dommages.</p>
+          </div>
+          
+          <div class="axis-card">
+            <div class="axis-number">04</div>
+            <h4 class="axis-title">Conception de mécanismes de défense</h4>
+            <p class="axis-description">Élaboration théorique et conception d'un système de défense préventif et adaptatif capable de contrer les attaques par enchaînement d'outils.</p>
+          </div>
+          
+          <div class="axis-card">
+            <div class="axis-number">05</div>
+            <h4 class="axis-title">Évaluation et gouvernance responsable</h4>
+            <p class="axis-description">Évaluation expérimentale de la robustesse des défenses et réflexion sur les enjeux éthiques, la fiabilité et la gouvernance responsable de l'IA.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="content-section">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">📖</span>
+        <h2 class="section-title">Méthodologie et démarche scientifique</h2>
+      </div>
+      <div class="section-content">
+        
+        <div class="phase-container">
+          <div class="phase-header">
+            <span class="phase-badge">Phase 1</span>
+            <h3 class="phase-title">PSIR 1 - État de l'art (S7)</h3>
+          </div>
+          <div class="methodology-grid">
+            <div class="method-step">
+              <div class="step-number">1</div>
+              <h4 class="step-title">Recherche bibliographique exhaustive</h4>
+              <p class="step-description">Consultation d'au moins 10 articles scientifiques dont minimum 4 publications dans des revues spécialisées (IEEE, ACM, arXiv, etc.). Utilisation de bases de données académiques comme ScienceDirect.</p>
+            </div>
+            <div class="method-step">
+              <div class="step-number">2</div>
+              <h4 class="step-title">Analyse critique de l'existant</h4>
+              <p class="step-description">Étude critique des méthodes, approches et résultats présentés dans la littérature. Identification des lacunes et des opportunités de recherche.</p>
+            </div>
+            <div class="method-step">
+              <div class="step-number">3</div>
+              <h4 class="step-title">Formulation d'hypothèses</h4>
+              <p class="step-description">Élaboration d'hypothèses de réponse à notre problématique, basées sur l'analyse de l'état de l'art et notre compréhension des mécanismes de sécurité.</p>
+            </div>
+            <div class="method-step">
+              <div class="step-number">4</div>
+              <h4 class="step-title">Conception du plan d'expérience</h4>
+              <p class="step-description">Projection d'un plan d'expérience détaillé pour le PSIR 2, définissant les protocoles de test pour valider nos hypothèses de défense.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-container">
+          <div class="phase-header">
+            <span class="phase-badge">Phase 2</span>
+            <h3 class="phase-title">PSIR 2 - Expérimentation (S8)</h3>
+          </div>
+          <div class="methodology-grid">
+            <div class="method-step">
+              <div class="step-number">5</div>
+              <h4 class="step-title">Mise en œuvre expérimentale</h4>
+              <p class="step-description">Réalisation du plan d'expérience défini en PSIR 1. Implémentation et test des mécanismes de défense dans un environnement contrôlé.</p>
+            </div>
+            <div class="method-step">
+              <div class="step-number">6</div>
+              <h4 class="step-title">Collecte et analyse des données</h4>
+              <p class="step-description">Recueil systématique des résultats expérimentaux et analyse statistique pour évaluer l'efficacité des défenses proposées.</p>
+            </div>
+            <div class="method-step">
+              <div class="step-number">7</div>
+              <h4 class="step-title">Validation des hypothèses</h4>
+              <p class="step-description">Comparaison des résultats obtenus avec les hypothèses initiales. Ajustement et raffinement des mécanismes de défense si nécessaire.</p>
+            </div>
+            <div class="method-step">
+              <div class="step-number">8</div>
+              <h4 class="step-title">Rédaction scientifique</h4>
+              <p class="step-description">Production d'un article scientifique synthétisant l'ensemble de la recherche, destiné à une communication lors d'événements scientifiques de l'école.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deliverables Section -->
+    <section class="content-section deliverables-section">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">📄</span>
+        <h2 class="section-title">Livrables et évaluation</h2>
+      </div>
+      <div class="section-content">
+        <div class="deliverables-grid">
+          <div class="deliverable-card">
+            <h4 class="deliverable-title">PSIR 1 - Rapport scientifique</h4>
+            <ul class="deliverable-list">
+              <li>État de l'art complet (4-5 pages)</li>
+              <li>Problématique clairement formulée</li>
+              <li>Hypothèses de recherche</li>
+              <li>Plan d'expérience pour PSIR 2</li>
+              <li>Bibliographie de 10+ sources</li>
+            </ul>
+            <div class="deliverable-eval">
+              <span class="eval-label">Évaluation :</span>
+              <div class="eval-breakdown">
+                <span>Livrable (30%)</span>
+                <span>Conduite (30%)</span>
+                <span>Qualité scientifique (40%)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="deliverable-card">
+            <h4 class="deliverable-title">PSIR 2 - Article scientifique</h4>
+            <ul class="deliverable-list">
+              <li>Article scientifique complet</li>
+              <li>Résultats expérimentaux</li>
+              <li>Analyse et discussion</li>
+              <li>Conclusions et perspectives</li>
+              <li>Communication possible aux événements de l'école</li>
+            </ul>
+            <div class="deliverable-eval">
+              <span class="eval-label">Objectif :</span>
+              <div class="eval-breakdown">
+                <span>Publication interne</span>
+                <span>Diffusion sur le site ESAIP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="important-note">
+          <div class="note-icon" aria-hidden="true">⚠️</div>
+          <div class="note-content">
+            <h4 class="note-title">Exigences de qualité</h4>
+            <p class="note-text">Les rapports sont analysés par des logiciels anti-plagiat. Le taux de plagiat acceptable est de maximum 10%. Tout dépassement sera sanctionné conformément au règlement académique.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="content-section team-section">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">👥</span>
+        <h2 class="section-title">L'équipe du projet</h2>
+      </div>
+      <div class="section-content">
+        <div class="details-grid">
+          <div class="detail-card">
+            <div class="detail-icon" aria-hidden="true">👨‍💻</div>
+            <div class="detail-content">
+              <h4 class="detail-title">Équipe</h4>
+              <ul class="team-list">
+                <li>Romain CAQUAIS</li>
+                <li>Euriel COURTOIS</li>
+                <li>Thomas FINKELSTEIN</li>
+                <li>Maximilien ROUSSEAU</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon" aria-hidden="true">🎓</div>
+            <div class="detail-content">
+              <h4 class="detail-title">Formation</h4>
+              <p class="detail-text">IR4 - Ingénieur du Numérique</p>
+              <p class="detail-text detail-text--secondary">4ème année - ESAIP École d'Ingénieurs</p>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon" aria-hidden="true">📅</div>
+            <div class="detail-content">
+              <h4 class="detail-title">Calendrier</h4>
+              <p class="detail-text">PSIR 1 : Sept - Déc 2025 (S7)</p>
+              <p class="detail-text detail-text--secondary">PSIR 2 : Jan - Mai 2026 (S8)</p>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div class="detail-icon" aria-hidden="true">👩‍🏫</div>
+            <div class="detail-content">
+              <h4 class="detail-title">Encadrement</h4>
+              <p class="detail-text">Tutrice de projet</p>
+              <p class="detail-text detail-text--secondary">Angela CIOCAN</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tags Section -->
+    <section class="tags-section">
+      <div class="tags-container">
+        <span class="tag">Intelligence Artificielle</span>
+        <span class="tag">Cybersécurité</span>
+        <span class="tag">LLM</span>
+        <span class="tag">Agents Multi-outils</span>
+        <span class="tag">Recherche</span>
+        <span class="tag">ESAIP</span>
+        <span class="tag">État de l'art</span>
+        <span class="tag">Défenses adaptatives</span>
+        <span class="tag">Sécurité IA</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Back Button -->
+  <a href="../projets.html" class="back-btn" aria-label="Retour aux projets">
+    <span aria-hidden="true">←</span>
+    <span>Retour aux projets</span>
+  </a>
+</body>
+</html>
