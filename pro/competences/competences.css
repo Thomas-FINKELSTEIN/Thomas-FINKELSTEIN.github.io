@@ -110,6 +110,23 @@ body {
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 80%);
 }
 
+/* ==================== BRAND ==================== */
+.brand {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  z-index: 1000;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
 /* ==================== MAIN CONTENT ==================== */
 .main-content {
   max-width: 1200px;

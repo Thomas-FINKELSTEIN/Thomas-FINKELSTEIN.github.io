@@ -138,19 +138,17 @@ body {
   position: fixed;
   top: 2rem;
   left: 2rem;
-  z-index: 10;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  animation: fadeIn 1s ease 0.5s forwards;
+  z-index: 1000;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.brand:hover {
-  opacity: 1;
-}
 
 /* ===== MAIN CONTENT ===== */
 
@@ -348,11 +346,12 @@ body {
 @media (max-width: 768px) {
   .brand {
     top: 1.5rem;
-    left: 1.5rem;
-    font-size: 0.8rem;
+  .brand {
+    top: 1rem;
+    left: 1rem;
+    font-size: 1rem;
   }
 
-  .main-title {
     font-size: 2.5rem;
   }
 
