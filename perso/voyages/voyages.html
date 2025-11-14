@@ -68,11 +68,6 @@
           <div class="section-header">
             <span class="section-tag">Hiver 2024</span>
             <h2 class="section-title">Finlande</h2>
-            <p class="section-description">
-              Un voyage au cœur de la Laponie finlandaise : paysages enneigés à perte de vue,
-              aurores boréales dansant dans le ciel nocturne et un silence absolu qui invite à la contemplation.
-              Une expérience magique où la nature révèle toute sa splendeur hivernale.
-            </p>
           </div>
           <div class="photo-gallery">
             <div class="photo-grid">
@@ -151,10 +146,6 @@
           <div class="section-header">
             <span class="section-tag">2024</span>
             <h2 class="section-title">Norvège</h2>
-            <p class="section-description">
-              Découverte des paysages spectaculaires de Norvège, entre fjords majestueux et montagnes imposantes.
-              Un pays où la nature règne en maître.
-            </p>
           </div>
           <div class="photo-gallery">
             <div class="photo-grid">
@@ -191,10 +182,6 @@
           <div class="section-header">
             <span class="section-tag">2023</span>
             <h2 class="section-title">Estonie</h2>
-            <p class="section-description">
-              Exploration de l'Estonie, un pays balte riche en histoire et en beauté naturelle.
-              Entre architecture médiévale et paysages préservés.
-            </p>
           </div>
           <div class="photo-gallery">
             <div class="photo-grid">
@@ -264,10 +251,6 @@
           <div class="section-header">
             <span class="section-tag">2023</span>
             <h2 class="section-title">Lettonie</h2>
-            <p class="section-description">
-              Découverte de la Lettonie, perle de la Baltique. Des forêts profondes aux plages de la mer Baltique,
-              en passant par la magnifique Riga, capitale Art Nouveau.
-            </p>
           </div>
           <div class="photo-gallery">
             <div class="photo-grid">
@@ -334,10 +317,6 @@
           <div class="section-header">
             <span class="section-tag">2023</span>
             <h2 class="section-title">France</h2>
-            <p class="section-description">
-              Exploration de la Côte d'Azur : Nice, Monaco et Cannes.
-              Entre mer Méditerranée et glamour de la French Riviera.
-            </p>
           </div>
 
           <!-- Nice -->
@@ -456,10 +435,6 @@
           <div class="section-header">
             <span class="section-tag">2022</span>
             <h2 class="section-title">Espagne</h2>
-            <p class="section-description">
-              Séjour à Lloret de Mar, station balnéaire catalane sur la Costa Brava.
-              Entre plages méditerranéennes et ambiance festive espagnole.
-            </p>
           </div>
 
           <!-- Lloret de Mar -->
@@ -613,7 +588,7 @@
       const imgSrc = img.src || img.getAttribute('data-src');
       lightboxImg.src = imgSrc;
       lightboxImg.alt = img.alt;
-      lightboxCaption.textContent = img.alt;
+      // lightboxCaption.textContent = img.alt;
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
