@@ -358,24 +358,17 @@
   font-weight: var(--font-bold);
   background: var(--color-surface);
   backdrop-filter: var(--backdrop-blur-md);
-  border: var(--border-width-thin) solid rgba(255, 255, 255, 0.1);
+  border: var(--border-width-thin) solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-lg);
-  color: var(--color-text);
+  color: rgba(255, 255, 255, 0.9);
   transition: all var(--transition-base);
   letter-spacing: var(--letter-spacing-tight);
 }
 
-.monogram-letter:first-child {
-  background: var(--gradient-primary);
-  border-color: transparent;
-}
-
 .monogram:hover .monogram-letter {
   transform: translateY(-2px);
-}
-
-.monogram:hover .monogram-letter:first-child {
-  box-shadow: var(--shadow-glow-primary);
+  background: var(--color-surface-hover);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 @keyframes fadeInLeft {
