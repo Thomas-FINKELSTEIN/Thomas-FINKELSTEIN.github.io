@@ -5,109 +5,222 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Univers personnel de Thomas Finkelstein - Parcours, passions et découvertes">
   <title>Personnel | Thomas Finkelstein</title>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="perso.css">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="perso.css">
 </head>
 <body>
   <!-- Background Effects -->
-  <div class="background-container" aria-hidden="true">
-    <div class="gradient-orb gradient-orb--pink"></div>
-    <div class="gradient-orb gradient-orb--orange"></div>
-    <div class="gradient-orb gradient-orb--purple"></div>
+  <div class="background-effects" aria-hidden="true">
+    <div class="gradient-orb gradient-orb-accent"></div>
+    <div class="gradient-orb gradient-orb-secondary"></div>
+    <div class="gradient-orb gradient-orb-primary"></div>
     <div class="grid-overlay"></div>
-    <div class="floating-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-      <div class="shape shape-4"></div>
-      <div class="shape shape-5"></div>
-      <div class="shape shape-6"></div>
-    </div>
   </div>
 
-  <!-- Brand -->
-  <div class="brand">Thomas Finkelstein</div>
-
   <!-- Main Content -->
-  <main class="main-content">
-    <!-- Introduction -->
-    <section class="intro-section">
-      <h1 class="page-title">Au-delà du professionnel</h1>
-      <p class="intro-text">
-        Découvrez ce qui façonne ma vision du monde : mes passions, mon parcours et mes expériences.
-      </p>
-    </section>
+  <main class="hub-container">
+    <!-- Monogram -->
+    <div class="monogram" aria-hidden="true">
+      <span class="monogram-letter">T</span>
+      <span class="monogram-letter">F</span>
+    </div>
 
-    <!-- Navigation Cards Grid -->
-    <section class="nav-grid">
-      
-      <!-- Passions Card -->
-      <a href="passions/passions.html" class="nav-card">
-        <div class="nav-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="nav-card-content">
-          <h2 class="nav-card-title">Passions</h2>
-          <p class="nav-card-description">Technologies, créativité et centres d'intérêt</p>
-        </div>
-        <div class="nav-card-arrow">→</div>
-      </a>
+    <!-- Hub Content -->
+    <div class="hub-content">
+      <!-- Title Section -->
+      <div class="hub-header">
+        <h1 class="hub-title">
+          <span class="hub-title-line">Au-delà du</span>
+          <span class="hub-title-line gradient-text-accent">Professionnel</span>
+        </h1>
+        <p class="hub-subtitle">
+          Découvrez ce qui façonne ma vision du monde
+        </p>
+      </div>
 
-      <!-- Voyages Card -->
-      <a href="voyages/voyages.html" class="nav-card">
-        <div class="nav-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 18H21M3 6H21M8 2L6 6M16 2L18 6M12 6V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 10C8 10 9 13 12 13C15 13 16 10 16 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="nav-card-content">
-          <h2 class="nav-card-title">Voyages</h2>
-          <p class="nav-card-description">Erasmus à Riga et découvertes culturelles</p>
-        </div>
-        <div class="nav-card-arrow">→</div>
-      </a>
+      <!-- Navigation Cards Grid -->
+      <div class="hub-cards">
+        <!-- Passions Card -->
+        <a href="passions/passions.html" class="hub-card hub-card-accent">
+          <div class="hub-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hub-card-content">
+            <h2 class="hub-card-title">Passions</h2>
+            <p class="hub-card-description">Technologies, créativité et centres d'intérêt</p>
+          </div>
+          <div class="hub-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="hub-card-glow"></div>
+        </a>
 
-      <!-- Engagements Bénévoles Card -->
-      <a href="benevole/Benevole.html" class="nav-card">
-        <div class="nav-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7564 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="nav-card-content">
-          <h2 class="nav-card-title">Engagements Bénévoles</h2>
-          <p class="nav-card-description">Actions solidaires et projets communautaires</p>
-        </div>
-        <div class="nav-card-arrow">→</div>
-      </a>
+        <!-- Voyages Card -->
+        <a href="voyages/voyages.html" class="hub-card hub-card-accent">
+          <div class="hub-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 18H21M3 6H21M8 2L6 6M16 2L18 6M12 6V22" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 10C8 10 9 13 12 13C15 13 16 10 16 10" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hub-card-content">
+            <h2 class="hub-card-title">Voyages</h2>
+            <p class="hub-card-description">Erasmus à Riga et découvertes culturelles</p>
+          </div>
+          <div class="hub-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="hub-card-glow"></div>
+        </a>
 
-      <!-- Éducation Card -->
-      <a href="education/education.html" class="nav-card">
-        <div class="nav-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22 10V15M2 10L12 5L22 10L12 15L2 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6 12V17C6 17 8 19 12 19C16 19 18 17 18 17V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="nav-card-content">
-          <h2 class="nav-card-title">Éducation</h2>
-          <p class="nav-card-description">Parcours académique et formation</p>
-        </div>
-        <div class="nav-card-arrow">→</div>
-      </a>
+        <!-- Engagements Bénévoles Card -->
+        <a href="benevole/Benevole.html" class="hub-card hub-card-accent">
+          <div class="hub-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7564 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7564 5.72718 21.351 5.12075 20.84 4.61Z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hub-card-content">
+            <h2 class="hub-card-title">Engagements</h2>
+            <p class="hub-card-description">Actions solidaires et projets communautaires</p>
+          </div>
+          <div class="hub-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="hub-card-glow"></div>
+        </a>
 
-    </section>
+        <!-- Éducation Card -->
+        <a href="education/education.html" class="hub-card hub-card-accent">
+          <div class="hub-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10V15M2 10L12 5L22 10L12 15L2 10Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 12V17C6 17 8 19 12 19C16 19 18 17 18 17V12" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hub-card-content">
+            <h2 class="hub-card-title">Éducation</h2>
+            <p class="hub-card-description">Parcours académique et formation</p>
+          </div>
+          <div class="hub-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="hub-card-glow"></div>
+        </a>
+      </div>
+
+      <!-- Quick Info -->
+      <div class="hub-info">
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+            </svg>
+          </div>
+          <div class="info-value">Étudiant</div>
+          <div class="info-label">Ingénieur en formation</div>
+        </div>
+        <div class="info-divider"></div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div class="info-value">Riga</div>
+          <div class="info-label">Erasmus 2024-2025</div>
+        </div>
+        <div class="info-divider"></div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+          </div>
+          <div class="info-value">6 pays</div>
+          <div class="info-label">Voyages découverts</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="../Menu/menu.html" class="hub-back-btn" aria-label="Retour au menu principal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span>Menu</span>
+    </a>
   </main>
 
-  <!-- Back Button -->
-  <a href="../Menu/menu.html" class="back-btn" aria-label="Retour au menu principal">
-    <span aria-hidden="true">↩</span>
-    <span>Menu</span>
-  </a>
+  <!-- Scripts -->
+  <script>
+    // Entrance animations
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.hub-card').forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 300 + (index * 100));
+      });
+
+      document.querySelectorAll('.info-item').forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }, 700 + (index * 80));
+      });
+    });
+
+    // Mouse parallax effect on cards
+    document.querySelectorAll('.hub-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Keyboard navigation for cards
+    document.querySelectorAll('.hub-card').forEach(card => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
