@@ -1,0 +1,80 @@
+/* Utilise le Design System - Thème PRIMARY (Pro) */
+/* Variables disponibles dans design-system.css */
+
+/* Override pour thème PRIMARY (pages pro) */
+.monogram-letter {
+  background: var(--gradient-primary) !important;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 8rem;
+}
+
+/* ==================== INTRODUCTION SECTION ==================== */
+.intro-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ==================== EXPERIENCES SECTION ==================== */
+.experiences-section {
+  margin-bottom: 5rem;
+  animation: fadeIn 0.8s ease forwards 0.2s;
+  opacity: 0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  .page-title {
+    font-size: 2.25rem;
+  }
+
+  .intro-text {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 2rem 1rem 5rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+}

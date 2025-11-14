@@ -5,24 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Projet PSIR - Défenses adaptatives pour agents LLM multi-outils - Thomas Finkelstein">
   <title>Projet PSIR | Thomas Finkelstein</title>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="../../../css/design-system.css">
+  <link rel="stylesheet" href="../../../css/components.css">
+  <link rel="stylesheet" href="PSIR.css">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="PSIR.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Background Effects -->
-  <div class="background-container" aria-hidden="true">
-    <div class="gradient-orb gradient-orb--blue"></div>
-    <div class="gradient-orb gradient-orb--purple"></div>
-    <div class="gradient-orb gradient-orb--cyan"></div>
+  <div class="background-effects" aria-hidden="true">
+    <div class="gradient-orb gradient-orb-primary"></div>
+    <div class="gradient-orb gradient-orb-secondary"></div>
+    <div class="gradient-orb gradient-orb-accent"></div>
     <div class="grid-overlay"></div>
   </div>
 
-  <!-- Header Brand -->
-  <header class="site-header">
-    <div class="brand">Thomas Finkelstein</div>
-  </header>
+  <!-- Monogram -->
+  <div class="monogram" aria-hidden="true">
+    <span class="monogram-letter">T</span>
+    <span class="monogram-letter">F</span>
+  </div>
 
   <!-- Main Content -->
   <main class="main-content">
@@ -357,8 +364,10 @@
 
   <!-- Back Button -->
   <a href="../projets.html" class="back-btn" aria-label="Retour aux projets">
-    <span aria-hidden="true">←</span>
-    <span>Retour aux projets</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    <span>Retour</span>
   </a>
 </body>
 </html>

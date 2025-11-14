@@ -1,53 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Passions de Thomas Finkelstein - Tech, Créativité, Sport & Voyage">
   <title>Passions | Thomas Finkelstein</title>
 
-  <!-- CSS commun perso -->
-  <link rel="stylesheet" href="../perso.css?v=1" />
-  <!-- CSS spécifique passions -->
-  <link rel="stylesheet" href="passions.css?v=1" />
+  <!-- Design System -->
+  <link rel="stylesheet" href="../../css/design-system.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="passions.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Personnel</div>
-      <ul class="nav-links">
-        <li><a href="../index.html">Accueil</a></li>
-        <li><a href="../voyages/voyages.html">Voyages</a></li>
-        <li><a href="../famille/famille.html">Famille</a></li>
-        <li><a href="../education/education.html">Éducation</a></li>
-        <li><a href="../../Menu/menu.html" class="retour">Menu</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Background Effects -->
+  <div class="background-effects" aria-hidden="true">
+    <div class="gradient-orb gradient-orb-accent"></div>
+    <div class="gradient-orb gradient-orb-secondary"></div>
+    <div class="gradient-orb gradient-orb-primary"></div>
+    <div class="grid-overlay"></div>
+  </div>
 
-  <main>
-    <section class="hero">
-      <h1>Mes passions</h1>
-      <p>À compléter.</p>
+  <!-- Monogram -->
+  <div class="monogram" aria-hidden="true">
+    <span class="monogram-letter">T</span>
+    <span class="monogram-letter">F</span>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Introduction -->
+    <section class="intro-section">
+      <h1 class="page-title">Mes Passions</h1>
+      <p class="intro-text">
+        Ce qui m'anime au quotidien : la tech, la créativité et l'exploration.
+      </p>
     </section>
 
-    <section class="passions">
-      <div class="grid">
-        <div class="passion">
-          <h3>Tech</h3>
-          <p>Exploration des réseaux, scripts, sécurité.</p>
-        </div>
-        <div class="passion">
-          <h3>Créativité</h3>
-          <p>Design, interfaces soignées, animations fluides.</p>
-        </div>
-        <div class="passion">
-          <h3>Sport & Voyage</h3>
-          <p>Discipline, curiosité, ouverture culturelle.</p>
-        </div>
+    <!-- Passions Grid -->
+    <section class="passions-section">
+      <div class="passions-grid">
+
+        <article class="passion-card">
+          <div class="passion-icon">💻</div>
+          <h3 class="passion-title">Tech</h3>
+          <p class="passion-description">
+            Exploration des réseaux, scripts, sécurité.
+          </p>
+        </article>
+
+        <article class="passion-card">
+          <div class="passion-icon">🎨</div>
+          <h3 class="passion-title">Créativité</h3>
+          <p class="passion-description">
+            Design, interfaces soignées, animations fluides.
+          </p>
+        </article>
+
+        <article class="passion-card">
+          <div class="passion-icon">🌍</div>
+          <h3 class="passion-title">Sport & Voyage</h3>
+          <p class="passion-description">
+            Discipline, curiosité, ouverture culturelle.
+          </p>
+        </article>
+
       </div>
     </section>
+
   </main>
 
-  <footer><p>© 2025 Thomas Finkelstein — Passions</p></footer>
+  <!-- Back Button -->
+  <a href="../index.html" class="back-btn" aria-label="Retour à la page personnelle">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M19 12H5M12 19l-7-7 7-7"/>
+    </svg>
+    <span>Retour</span>
+  </a>
+
 </body>
 </html>

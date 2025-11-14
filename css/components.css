@@ -282,12 +282,27 @@
   transform: translateX(-4px);
 }
 
+.back-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-base);
+}
+
+.back-btn:hover svg {
+  transform: translateX(-2px);
+}
+
 @media (max-width: 768px) {
   .back-btn {
     bottom: var(--space-4);
     left: var(--space-4);
     padding: var(--space-2) var(--space-4);
     font-size: var(--text-xs);
+  }
+
+  .back-btn svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -316,6 +331,74 @@
     font-size: var(--text-base);
     top: var(--space-4);
     left: var(--space-4);
+  }
+}
+
+/* ============================================
+   MONOGRAM
+   ============================================ */
+.monogram {
+  position: fixed;
+  top: var(--space-6);
+  left: var(--space-6);
+  display: flex;
+  gap: var(--space-1);
+  z-index: var(--z-fixed);
+  pointer-events: none;
+  animation: fadeInLeft 0.8s var(--ease-out);
+}
+
+.monogram-letter {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  background: var(--color-surface);
+  backdrop-filter: var(--backdrop-blur-md);
+  border: var(--border-width-thin) solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  transition: all var(--transition-base);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.monogram-letter:first-child {
+  background: var(--gradient-primary);
+  border-color: transparent;
+}
+
+.monogram:hover .monogram-letter {
+  transform: translateY(-2px);
+}
+
+.monogram:hover .monogram-letter:first-child {
+  box-shadow: var(--shadow-glow-primary);
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .monogram {
+    top: var(--space-4);
+    left: var(--space-4);
+  }
+
+  .monogram-letter {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-lg);
   }
 }
 

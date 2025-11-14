@@ -1,3 +1,11 @@
+/* Utilise le Design System - Thème PRIMARY (Pro) */
+/* Variables disponibles dans design-system.css */
+
+/* Override pour thème PRIMARY (pages pro) */
+.monogram-letter {
+  background: var(--gradient-primary) !important;
+}
+
 /* ==================== VARIABLES ==================== */
 :root {
   --bg-primary: #0a0a0b;
