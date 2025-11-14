@@ -435,6 +435,29 @@ body {
   transform: scale(1.08);
 }
 
+/* Lazy loading styles */
+.lazy-img {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(34, 211, 238, 0.05));
+  min-height: 200px;
+}
+
+.lazy-img:not([src]) {
+  opacity: 0.3;
+}
+
+.lazy-img.loaded {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Photo overlay removed - no text on hover */
 
 /* ============================================
