@@ -3,51 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Finkelstein</title>
+  <meta name="description" content="Portfolio professionnel et personnel de Thomas Finkelstein - Ingénieur et étudiant">
+  <title>Thomas Finkelstein | Portfolio</title>
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="menu.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="grid-background"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="particles"></div>
-
-  <div class="container">
-    <div class="monogram">TF</div>
-    <h1 class="title">Thomas Finkelstein</h1>
-    <p class="subtitle">Choisissez votre univers</p>
-    <div class="buttons">
-      <button class="btn pro"  onclick="navigate('pro')">Professionnel</button>
-      <button class="btn perso" onclick="navigate('perso')">Personnel</button>
-    </div>
+  <!-- Background Effects -->
+  <div class="background-effects" aria-hidden="true">
+    <div class="gradient-orb gradient-orb-primary"></div>
+    <div class="gradient-orb gradient-orb-secondary"></div>
+    <div class="gradient-orb gradient-orb-accent"></div>
+    <div class="grid-overlay"></div>
   </div>
 
-  <div class="signature">TF © 2025</div>
-  <div class="transition-overlay" id="transition"></div>
+  <!-- Main Content -->
+  <main class="landing-container">
+    <!-- Monogram -->
+    <div class="monogram" aria-hidden="true">
+      <span class="monogram-letter">T</span>
+      <span class="monogram-letter">F</span>
+    </div>
 
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h1 class="main-title">
+        <span class="title-line">Thomas</span>
+        <span class="title-line gradient-text">Finkelstein</span>
+      </h1>
+
+      <p class="main-subtitle">
+        Choisissez votre univers
+      </p>
+
+      <!-- Navigation Cards -->
+      <div class="choice-cards">
+        <!-- Professional Card -->
+        <div class="choice-card card-pro" onclick="navigate('pro')" role="button" tabindex="0" aria-label="Accéder à l'univers professionnel">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM10 5h4v2h-4V5z"/>
+            </svg>
+          </div>
+          <h2 class="card-title">Professionnel</h2>
+          <p class="card-description">Compétences, projets et expériences</p>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+
+        <!-- Personal Card -->
+        <div class="choice-card card-perso" onclick="navigate('perso')" role="button" tabindex="0" aria-label="Accéder à l'univers personnel">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+            </svg>
+          </div>
+          <h2 class="card-title">Personnel</h2>
+          <p class="card-description">Passions, voyages et engagements</p>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="card-glow"></div>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="quick-stats">
+        <div class="stat-item">
+          <div class="stat-value">2025</div>
+          <div class="stat-label">Portfolio</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">Ingénieur</div>
+          <div class="stat-label">En formation</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">Passionné</div>
+          <div class="stat-label">Tech & Voyages</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Signature -->
+    <div class="signature">
+      <span>TF</span>
+      <span class="signature-divider">•</span>
+      <span>2025</span>
+    </div>
+  </main>
+
+  <!-- Transition Overlay -->
+  <div class="transition-overlay" id="transition" aria-hidden="true">
+    <div class="transition-spinner"></div>
+  </div>
+
+  <!-- Scripts -->
   <script>
+    // Navigation function with smooth transition
     function navigate(choice) {
-      const t = document.getElementById('transition');
-      t.classList.add('active');
+      const transition = document.getElementById('transition');
+      const targetCard = choice === 'pro' ? '.card-pro' : '.card-perso';
+      const card = document.querySelector(targetCard);
+
+      // Add scale effect to clicked card
+      card.style.transform = 'scale(0.95)';
+
+      // Activate transition overlay
+      transition.classList.add('active');
+
+      // Navigate after animation
       setTimeout(() => {
-        if (choice === 'pro')   window.location.href = '../pro/index.html';
-        else                     window.location.href = '../perso/index.html';
-      }, 500);
+        if (choice === 'pro') {
+          window.location.href = '../pro/index.html';
+        } else {
+          window.location.href = '../perso/index.html';
+        }
+      }, 600);
     }
-    window.addEventListener('pageshow', (e) => {
-      if (e.persisted) document.getElementById('transition').classList.remove('active');
+
+    // Handle back button navigation
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        document.getElementById('transition').classList.remove('active');
+      }
     });
-    const particles = document.querySelector('.particles');
-    for (let i = 0; i < 50; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      p.style.left = Math.random() * 100 + '%';
-      p.style.top  = Math.random() * 100 + '%';
-      p.style.animationDelay = Math.random() * 15 + 's';
-      p.style.animationDuration = (15 + Math.random()*10) + 's';
-      particles.appendChild(p);
-    }
+
+    // Keyboard navigation for cards
+    document.querySelectorAll('.choice-card').forEach(card => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+
+    // Entrance animations
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.choice-card').forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 400 + (index * 150));
+      });
+
+      document.querySelectorAll('.stat-item').forEach((stat, index) => {
+        setTimeout(() => {
+          stat.style.opacity = '1';
+          stat.style.transform = 'translateY(0)';
+        }, 800 + (index * 100));
+      });
+    });
+
+    // Mouse parallax effect on cards
+    document.querySelectorAll('.choice-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
   </script>
 </body>
 </html>
