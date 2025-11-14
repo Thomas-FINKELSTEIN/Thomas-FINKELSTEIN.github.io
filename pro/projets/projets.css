@@ -342,7 +342,7 @@ body {
 .back-btn {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  left: 2rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -406,7 +406,7 @@ body {
 
   .back-btn {
     bottom: 1rem;
-    right: 1rem;
+    left: 1rem;
     padding: 0.75rem 1.25rem;
   }
 }
