@@ -1,69 +1,208 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Univers professionnel de Thomas Finkelstein - Compétences, projets et formation">
   <title>Professionnel | Thomas Finkelstein</title>
-  <link rel="stylesheet" href="pro.css" />
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="pro.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Animated Background -->
-  <div class="grid-background"></div>
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="particles"></div>
-
-  <!-- Brand -->
-  <div class="brand">Thomas Finkelstein</div>
+  <!-- Background Effects -->
+  <div class="background-effects" aria-hidden="true">
+    <div class="gradient-orb gradient-orb-primary"></div>
+    <div class="gradient-orb gradient-orb-secondary"></div>
+    <div class="gradient-orb gradient-orb-accent"></div>
+    <div class="grid-overlay"></div>
+  </div>
 
   <!-- Main Content -->
-  <main class="home">
-    <div class="content-wrapper">
-      <h1 class="main-title">Intelligence Artificielle & Data</h1>
-      <p class="intro">
-        Étudiant en 4ᵉ année à l'ESAIP, je me spécialise dans l'intelligence artificielle et les données.<br>
-        Pour en découvrir plus sur mon univers professionnel, choisissez votre section.
-      </p>
+  <main class="hub-container">
+    <!-- Monogram -->
+    <div class="monogram" aria-hidden="true">
+      <span class="monogram-letter">T</span>
+      <span class="monogram-letter">F</span>
+    </div>
 
-      <div class="cta-group">
-        <a class="cta cta-esaip" href="esaip/esaip.html">
-          <span class="cta-label">Formation</span>
-          <span class="cta-sublabel">ESAIP</span>
+    <!-- Hub Content -->
+    <div class="hub-content">
+      <!-- Title Section -->
+      <div class="hub-header">
+        <h1 class="hub-title">
+          <span class="hub-title-line">Intelligence Artificielle</span>
+          <span class="hub-title-line gradient-text-primary">& Data Science</span>
+        </h1>
+        <p class="hub-subtitle">
+          Étudiant en 4ᵉ année à l'ESAIP - Spécialisation IA & Données
+        </p>
+      </div>
+
+      <!-- Navigation Cards Grid -->
+      <div class="hub-cards">
+        <!-- ESAIP Card -->
+        <a href="esaip/esaip.html" class="hub-card hub-card-primary">
+          <div class="hub-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10V15M2 10L12 5L22 10L12 15L2 10Z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 12V17C6 17 8 19 12 19C16 19 18 17 18 17V12" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hub-card-content">
+            <h2 class="hub-card-title">Formation</h2>
+            <p class="hub-card-description">Parcours académique et spécialisation</p>
+          </div>
+          <div class="hub-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="hub-card-glow"></div>
         </a>
-        <a class="cta cta-projets" href="projets/projets.html">
-          <span class="cta-label">Réalisations</span>
-          <span class="cta-sublabel">Projets</span>
+
+        <!-- Projets Card -->
+        <a href="projets/projets.html" class="hub-card hub-card-primary">
+          <div class="hub-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="9 22 9 12 15 12 15 22" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hub-card-content">
+            <h2 class="hub-card-title">Réalisations</h2>
+            <p class="hub-card-description">Projets et développements techniques</p>
+          </div>
+          <div class="hub-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="hub-card-glow"></div>
         </a>
-        <a class="cta cta-competences" href="competences/competences.html">
-          <span class="cta-label">Expertise</span>
-          <span class="cta-sublabel">Compétences</span>
+
+        <!-- Compétences Card -->
+        <a href="competences/competences.html" class="hub-card hub-card-primary">
+          <div class="hub-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 17l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="hub-card-content">
+            <h2 class="hub-card-title">Expertise</h2>
+            <p class="hub-card-description">Compétences techniques et outils</p>
+          </div>
+          <div class="hub-card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <div class="hub-card-glow"></div>
         </a>
       </div>
+
+      <!-- Quick Info -->
+      <div class="hub-info">
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM10 5h4v2h-4V5z"/>
+            </svg>
+          </div>
+          <div class="info-value">ESAIP</div>
+          <div class="info-label">École d'ingénieurs</div>
+        </div>
+        <div class="info-divider"></div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <div class="info-value">IA & Data</div>
+          <div class="info-label">Spécialisation</div>
+        </div>
+        <div class="info-divider"></div>
+        <div class="info-item">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="info-value">4ᵉ année</div>
+          <div class="info-label">Niveau d'études</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Back Button -->
+    <a href="../Menu/menu.html" class="hub-back-btn" aria-label="Retour au menu principal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      <span>Menu</span>
+    </a>
   </main>
 
-  <!-- Back to Menu -->
-  <a class="back-menu" href="../Menu/menu.html" aria-label="Retour au menu principal">
-    <span>↩</span> Menu
-  </a>
-
+  <!-- Scripts -->
   <script>
-    // Create animated particles
-    const particlesContainer = document.querySelector('.particles');
-    for (let i = 0; i < 50; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.top = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 15 + 's';
-      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-      particlesContainer.appendChild(particle);
-    }
+    // Entrance animations
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.hub-card').forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 300 + (index * 100));
+      });
 
-    // Prevent flash on page show
-    window.addEventListener('pageshow', (e) => {
-      document.body.classList.add('ready');
+      document.querySelectorAll('.info-item').forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }, 700 + (index * 80));
+      });
+    });
+
+    // Mouse parallax effect on cards
+    document.querySelectorAll('.hub-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Keyboard navigation for cards
+    document.querySelectorAll('.hub-card').forEach(card => {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
     });
   </script>
 </body>
